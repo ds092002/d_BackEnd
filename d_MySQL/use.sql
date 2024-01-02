@@ -2,15 +2,15 @@
 
 -- \connect root@localhost:3306
 
--- create dtatbase d_BackEnd;
+-- create database test;
 
--- show database;
+-- show test;
 
--- use d_BackEnd;
+-- use test;
 
 -- show tables;
 
-create table user(
+create table test(
     id int,
     firstName varchar(20),
     lastName varchar(30),
@@ -18,3 +18,5 @@ create table user(
     email varchar(20),
     mobileNo int
 );
+
+insert 
