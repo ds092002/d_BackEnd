@@ -17,3 +17,8 @@ insert into salesmanmaster(SalesmanNO, SalesmanName, Address1, Address2, City, P
 ('S00002','Omkar','65','Nariman','Mumbai',400001,'Maharashtra',3000,200,100,'Good'),
 ('S00003','Raj','P-7','Bandra','Mumbai',400032,'Maharashtra',3000,200,100,'Good'),
 ('S00004','Ashish','A/5','Juhu','Mumbai',400044,'Maharashtra',3000,200,150,'Good');
+
+
+-- select * from salesmanmaster where SaleAmt = 3000;   // find salary equal to 3000
+
+-- update salesmanmaster set City= 'Pune' where City = 'Mumbai';

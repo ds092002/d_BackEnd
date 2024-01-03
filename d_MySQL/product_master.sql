@@ -19,3 +19,9 @@ insert into productmaster(ProductNo, Description, ProfitPercent, UnitMeasure, Qt
 ('P07965','Denim Shirts',4,'Piece',100,40,350,250),
 ('P07975','Lycra Tops',5,'Piece',70,30,300,175),
 ('P08865','Skirts',5,'Piece',75,30,450,300);
+
+
+-- select Description from productmaster;   // various product from product master
+
+
+-- update productmaster set CostPrice = 950 where ProductNo = 'P07868';    // change cost price of trousers

@@ -41,3 +41,39 @@ insert into test (id, firstName, lastName, gender, mobileNo) values
 insert into test (id, firstName, lastName, gender, email, mobileNo) values
 (10,'Vijay','Vekriya','Male','vv@gmail.com',1234567890),
 (11,'Bhautik','Dudhat','Male','bd@gmail.com',1234567890);
+
+
+
+-- 03-01-2024
+
+-- select name,city from client_master;
+-- select *, city from client_master;
+-- select name as "Full Name" from client_master;
+-- select name as 'Full Name', City "District" from client_master;
+
+
+-- where clause
+-- select * from client_master where city = 'mumbai';
+-- select * from client_master where Baldue < 5000;
+-- select * from client_master where Baldue >= 5000;
+-- select * from client_master where Baldue = 5000;
+
+
+-- order by
+-- select * from client_master order by City desc, Baldue asc;
+-- select * from client_master order by City desc;
+
+
+-- update query
+-- update client_master set Baldue = 1000;  // all recode update
+-- update client_master set Baldue = 1000 , City = 'Navi Mumbai' where Baldue = 0;
+
+
+-- delete query
+-- delete from client_master;
+-- delete from client_master where Address1 = '66';
+
+
+-- drop statement
+-- drop table client_master;
+-- drop database test;

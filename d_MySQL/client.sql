@@ -16,3 +16,17 @@ insert into client_master(ClientNo,CName,CAddress1,CAddress2,City,Pincode,CState
 ('C00004','Ashwini Joshi','A-18','Ms','Bangalore',560001,'Karnataka',0),
 ('C00005','Hansel Colaco','P-7','Bandra','Mumbai',400060,'Maharastra',2000),
 ('C00006','Deepak Sharma','L9','Long Street','Mangalore',560050,'Karnataka',0);
+
+
+-- select CName from client_master;     // find all clients name
+
+-- select * from client_master;
+
+-- select CName,city,CState from client_master;     // retrive city client name , and state
+
+-- select * from client_master where City = 'Mumbai';    // list of client who lives in mumbai
+
+
+-- update client_master set city = 'Banglore' , CState = 'Karnataka' where ClientNo = 'C00005';  // change city 
+
+update client_master set Baldue = 1000 where ClientNo = 'C00001';
