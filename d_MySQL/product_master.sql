@@ -1,4 +1,5 @@
-create table productmaster(
+create table productmaster
+(
     ProductNo varchar(6),
     Description varchar(16),
     ProfitPercent int,

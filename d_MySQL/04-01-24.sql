@@ -34,3 +34,14 @@ select * from customers where customerName like '%o_';
 select * from customers where customerName like '_o%___' and addressLine2 like 'p%';
 
 
+
+select * from customers where country not in ('USA');
+select * from customers where customerNumber not between 150 and 200;
+select * from customers where creditLimit > 70000 order by contactLastName desc;
+select * from customers where city in ('Singapore','Liverpool','NYC');
+select * from customers where contactLastName like 'Smith%';
+select * from customers where contactLastName like 'S%';
+select * from customers where creditLimit between 50000 and 95000;
+select * from customers where contactLastName like 'S%h';
+select * from customers where contactLastName like 's____';
+select * from customers where contactLastName like '________';
