@@ -32,7 +32,7 @@ select * from customers where customerName like 'd%d';
 select * from customers where customerName like 'd%' and contactFirstName like 'm%';
 select * from customers where customerName like '%o_';
 select * from customers where customerName like '_o%___' and addressLine2 like 'p%';
-
+select * from customers where phone like '6%';
 
 select country from customers group by country;
 select distinct creditLimit from customers;
