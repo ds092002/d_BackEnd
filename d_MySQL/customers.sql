@@ -63,6 +63,6 @@ select * from customers where contactLastName like 'S%h';    --  (14)
 select * from customers where contactLastName like 's____';     --  (15) 
 select * from customers where contactLastName like '________';    --  (16)  
 select * from customers where customerName like 'a%e';      --  (17) 
- select * from customers where customerName like '%ee%';    --   (18) 
+select * from customers where customerName like '%ee%';    --   (18) 
 select state, max(creditLimit) from customers group by state;  --  (20) 
 select state from customers group by state;
