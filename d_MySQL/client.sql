@@ -1,6 +1,6 @@
 create table client_master(
-    ClientNo varchar(6),
-    CName varchar(20),
+    ClientNo varchar(6) primary key,
+    CName varchar(20) Not Null,
     CAddress1 varchar(30),
     CAddress2 varchar(30),
     City varchar(15),

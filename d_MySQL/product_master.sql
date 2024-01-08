@@ -1,16 +1,16 @@
-create table productmaster
+create table product_master
 (
-    ProductNo varchar(6),
-    Description varchar(16),
-    ProfitPercent int,
-    UnitMeasure varchar(10),
-    QtyOnHand int,
-    RecoredLVL1 int,
-    SellPrice int,
-    CostPrice int
+    ProductNo varchar(6) primary key,
+    Description varchar(16) Not Null,
+    ProfitPercent int Not Null, 
+    UnitMeasure varchar(10)Not Null,
+    QtyOnHand int Not Null,
+    RecoredLVL1 int Not Null,
+    SellPrice int Not Null,
+    CostPrice int Not Null
 );
 
-insert into productmaster(ProductNo, Description, ProfitPercent, UnitMeasure, QtyOnHand, RecoredLVL1, SellPrice, CostPrice) values
+insert into product_master(ProductNo, Description, ProfitPercent, UnitMeasure, QtyOnHand, RecoredLVL1, SellPrice, CostPrice) values
 ('P00001','T-Shirt',5,'Piece',200,50,350,250),
 ('P0345','Shirts',6,'Piece',150,50,500,350),
 ('P06734','Cotton Jeans',5,'Piece',100,20,600,450),
@@ -22,7 +22,7 @@ insert into productmaster(ProductNo, Description, ProfitPercent, UnitMeasure, Qt
 ('P08865','Skirts',5,'Piece',75,30,450,300);
 
 
--- select Description from productmaster;   // various product from product master
+-- select Description from product_master;   // various product from product master
 
 
--- update productmaster set CostPrice = 950 where ProductNo = 'P07868';    // change cost price of trousers
+-- update product_master set CostPrice = 950 where ProductNo = 'P07868';    // change cost price of trousers
