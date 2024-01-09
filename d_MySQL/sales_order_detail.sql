@@ -16,7 +16,7 @@ insert into sales_orderDetail(OrderNo, ProductNo, QtyOrdered, QtyDisp, ProductRa
 ('O46865','P07868',3,3,3150),
 ('O46865','P07885',3,1,5250),
 ('O46865','P00001',10,10,525),
-('O46865','P03453',4,4,1050),
+('O46865','P0345',4,4,1050),
 ('O19003','P03453',2,2,1050),
 ('O19003','P06734',1,1,12000),
 ('O46866','P07965',1,0,8400),
@@ -24,5 +24,3 @@ insert into sales_orderDetail(OrderNo, ProductNo, QtyOrdered, QtyDisp, ProductRa
 ('O19008','P00001',10,5,525),
 ('O19008','P07975',5,3,1050);
 
-
--- ERROR: 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`dhaval`.`sales_orderdetail`, CONSTRAINT `sales_orderdetail_ibfk_2` FOREIGN KEY (`ProductNo`) REFERENCES `product_master` (`ProductNo`))
