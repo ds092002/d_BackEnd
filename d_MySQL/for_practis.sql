@@ -1,4 +1,4 @@
- create table customer(
+ create table customers(
         customer_id int primary key,
         fist_name varchar(255),
         last_name varchar(255),
@@ -96,3 +96,10 @@ select * from customer;
 
 
 -- insert some sample data into each table using the insert into statments
+
+ALTER TABLE products DROP COLUMN category;
+ALTER TABLE orders DROP ROW order_id = 2;
+DELETE FROM orders WHERE order_id= 2;
+
+
+armand et roland
