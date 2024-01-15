@@ -4,7 +4,7 @@
 
 -- create database test;
 
--- show test;
+-- show databases;
 
 -- use test;
 
@@ -48,8 +48,8 @@ insert into test (id, firstName, lastName, gender, email, mobileNo) values
 
 -- select name,city from client_master;
 -- select *, city from client_master;
--- select name as "Full Name" from client_master;
--- select name as 'Full Name', City "District" from client_master;
+-- select Cname as "Full Name" from client_master;
+-- select Cname as 'Full Name', City "District" from client_master;
 
 
 -- where clause
