@@ -100,6 +100,3 @@ select * from customer;
 ALTER TABLE products DROP COLUMN category;
 ALTER TABLE orders DROP ROW order_id = 2;
 DELETE FROM orders WHERE order_id= 2;
-
-
-armand et roland
