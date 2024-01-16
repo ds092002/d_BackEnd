@@ -1,4 +1,4 @@
-
+use classicmodels;
 select * from employees;     -- (1) 
 
 select * from employees where jobTitle = 'Sales Rep' and employeeNumber Between 1200 and 1500;      -- (2) 

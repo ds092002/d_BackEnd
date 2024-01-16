@@ -66,3 +66,12 @@ select * from customers where customerName like 'a%e';      --  (17)
 select * from customers where customerName like '%ee%';    --   (18) 
 select state, max(creditLimit) from customers group by state;  --  (20) 
 select state from customers group by state;
+
+select * from employees where jobTitle = 'sales Rep' and employeeNumber between 1200 and 1500;
+select * from customers where country not in ('USA');
+select * from customers where customerNumber not between 150 and 200;
+select firstname , lastname as 'Name Of The Employee' from employees order by lastName desc;
+select * from customers where creditLimit >= 7000 order by contactLastName desc;
+select * from customers where city in ('singapore','liverpool','nyc');
+select * from customers where contactLastName like 'Smith%';
+select state , max(creditlimit) from customers group by state;
