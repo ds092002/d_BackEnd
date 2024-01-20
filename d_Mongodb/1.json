@@ -1,0 +1,14 @@
+db.student.insertOne({
+    name: "John",
+    age : 20,
+    email: "john@test.in",
+    hobbies : ["Sport","Dancing"],
+    address : {
+        line1 : '208, city-center',
+        line2 :'YogiChowk',
+        city : 'Surat',
+        state : 'Gujarat',
+        country : 'India',
+        pincode : 560001
+    }
+});
