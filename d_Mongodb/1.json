@@ -12,3 +12,4 @@ db.student.insertOne({
         pincode : 560001
     }
 });
+
