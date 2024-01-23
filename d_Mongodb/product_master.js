@@ -7,7 +7,7 @@ db.product_masters.insertMany([
         QtyOnHand: 200,
         ReorederLv1: 50,
         SellPrice: 350,
-        CostPrice: 250,
+        CostPrice: 250
     },
     {
         ProductNo: 'P0345',
@@ -17,7 +17,7 @@ db.product_masters.insertMany([
         QtyOnHand: 150,
         ReorederLv1: 50,
         SellPrice: 500,
-        CostPrice: 350,
+        CostPrice: 350
     },
     {
         ProductNo: 'P06734',
@@ -27,7 +27,7 @@ db.product_masters.insertMany([
         QtyOnHand: 100,
         ReorederLv1: 20,
         SellPrice: 600,
-        CostPrice: 450,
+        CostPrice: 450
     },
     {
         ProductNo: 'P07865',
@@ -37,7 +37,7 @@ db.product_masters.insertMany([
         QtyOnHand: 100,
         ReorederLv1: 20,
         SellPrice: 750,
-        CostPrice: 500,
+        CostPrice: 500
     },
     {
         ProductNo: 'P07868',
@@ -47,7 +47,7 @@ db.product_masters.insertMany([
         QtyOnHand: 150,
         ReorederLv1: 50,
         SellPrice: 850,
-        CostPrice: 500,
+        CostPrice: 500
     },
     {
         ProductNo: 'P07865',
@@ -57,7 +57,7 @@ db.product_masters.insertMany([
         QtyOnHand: 80,
         ReorederLv1: 30,
         SellPrice: 700,
-        CostPrice: 450,
+        CostPrice: 450
     },
     {
         ProductNo: 'P07965',
@@ -67,7 +67,7 @@ db.product_masters.insertMany([
         QtyOnHand: 100,
         ReorederLv1: 40,
         SellPrice: 350,
-        CostPrice: 250,
+        CostPrice: 250
     },
     {
         ProductNo: 'P07975',
@@ -77,7 +77,7 @@ db.product_masters.insertMany([
         QtyOnHand: 70,
         ReorederLv1: 30,
         SellPrice: 300,
-        CostPrice: 175,
+        CostPrice: 175
     },
     {
         ProductNo: 'P08865',
@@ -87,7 +87,7 @@ db.product_masters.insertMany([
         QtyOnHand: 75,
         ReorederLv1: 30,
         SellPrice: 450,
-        CostPrice: 300,
+        CostPrice: 300
     }
 ]);
 

@@ -6,8 +6,7 @@ db.students.insertmany([
         Age: 21,
         Email: 'dd@gmail.com',
         Address: {
-            Address1: 'A-18 , Haridham Soc;',
-            Address2: 'Near Archana School',
+            Line1: 'A-18 , Haridham Soc,Near Archana School',
             City: 'Surat',
             State: 'Gujarat',
             Country: 'India',
@@ -26,8 +25,7 @@ db.students.insertmany([
         Age: 22,
         Email: 'Vijay@gmail.com',
         Address: {
-            Address1: '518 , Matrushakti Soc;',
-            Address2: 'Punagam Road',
+            Line1: '518 , Matrushakti Soc; Punagam Road',
             City: 'Surat',  
             State: 'Gujarat',   
             Country: 'India',   
@@ -46,8 +44,7 @@ db.students.insertmany([
         Age: 18,
         Email: 'darshan@gmail.com',
         Address: {
-            Address1: 'C-9 , RaviPark Soc;',
-            Address2: 'Punagam Road',
+            Line1: 'C-9 , RaviPark Soc; Punagam Road',
             City: 'Surat',
             State: 'Gujarat',
             Country: 'India',
@@ -66,8 +63,7 @@ db.students.insertmany([
         Age: 18,
         Email: 'jenil@gmail.com',
         Address: {
-            Address1: '54 Ayodhya Nagar',
-            Address2: 'Yogi Chowk',
+            Line1: '54 Ayodhya Nagar Yogi Chowk',
             City: 'Surat',
             State: 'Gujarat',
             Country: 'India',
@@ -86,8 +82,7 @@ db.students.insertmany([
         Age: 18,
         Email: 'krish@gmail.com',
         Address: {
-            Address1: '32 Ashok Vatika',
-            Address2: 'Nana Varchha',
+            Line1: '32 Ashok Vatika,Nana Varchha',
             City: 'Surat',
             State: 'Gujarat',
             Country: 'India',
@@ -106,8 +101,7 @@ db.students.insertmany([
         Age: 18,
         Email: 'bhautik@gmail.com',
         Address: {
-            Address1: '204 Pushp Van',
-            Address2: 'Mota Varchha',
+            Line1: '204 Pushp Van,Mota Varchha',
             City: 'Surat',
             State: 'Gujarat',
             Country: 'India',
@@ -126,8 +120,7 @@ db.students.insertmany([
         Age: 18,
         Email: 'mahendra@gmail.com',
         Address: {
-            Address1: '456 Sarita Vihar',
-            Address2: 'Puna - Bombay Road',
+            Line1: '456 Sarita Vihar ,Puna - Bombay Road',
             City: 'Surat',
             State: 'Gujarat',
             Country: 'India',
@@ -140,14 +133,13 @@ db.students.insertmany([
         }
     },
     {
-        FirstName: 'Raj',
-        LastName: 'Kumar',
+        FirstName: 'Vrishabh',
+        LastName: 'Jogani',
         Gender: 'Male',
         Age: 18,
-        Email: 'raj@gmail.com',
+        Email: 'vrishabh@gmail.com',
         Address: {
-            Address1: '1234567890',
-            Address2: 'Puna - Bombay Road',
+            Line1: '12 Tirupati Soc; Yogi Chowk ',
             City: 'Surat',
             State: 'Gujarat',
             Country: 'India',
@@ -159,4 +151,80 @@ db.students.insertmany([
             English: 99
         }
     },
-])
+    {
+        FirstName: 'Vijay',
+        LastName: 'Vekariya',
+        Gender: 'Male',
+        Age: 35,
+        Email: 'vijayv@gmail.com',
+        Address: {
+            Line1: 'c-360 Anand Vatika,Yogi Chowk ',
+            City: 'Surat',
+            State: 'Gujarat',
+            Country: 'India',
+            Pincode: 395010
+        },
+        Subjects:{
+            Maths: 99,
+            Science: 99,
+            English: 99
+        }
+    },
+    {
+        FirstName: 'Vijay',
+        LastName: 'Dankhara',
+        Gender: 'Male',
+        Age: 26,
+        Email: 'vijayv@gmail.com',
+        Address: {
+            Line1: 'D 62 SitaNagar,PunaGam Road',
+            City: 'Surat',
+            State: 'Gujarat',
+            Country: 'India',
+            Pincode: 395010
+        },
+        Subjects:{
+            Maths: 99,
+            Science: 99,
+            English: 99
+        }
+    },
+    {
+        FirstName: 'Srushti',
+        LastName: 'Sojitra',
+        Gender: 'Female',
+        Age: 20,
+        Email: 'srushti@gamil.com',
+        Address: {
+            Line1: 'D 62 SitaNagar,PunaGam Road',
+            City: 'Surat',
+            State: 'Gujarat',
+            Country: 'India',
+            Pincode: 395010
+        },
+        Subjects:{
+            Maths: 99,
+            Science: 99,
+            English: 99
+        }
+    },
+    {
+        FirstName: 'Monika',
+        LastName: 'Katheriya',
+        Gender: 'Female',
+        Age: 20,
+        Email: 'mk@gmail.com',
+        Address: {
+            Line1: 'A 23 KiranPark,PunaGam Road',
+            City: 'Surat',
+            State: 'Gujarat',
+            Country: 'India',
+            Pincode: 395010
+        },
+        Subjects:{
+            Maths: 99,
+            Science: 99,
+            English: 99
+        }
+    }
+]);
