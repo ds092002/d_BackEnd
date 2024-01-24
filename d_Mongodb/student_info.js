@@ -235,6 +235,11 @@ db.students.insertMany([
 db.students.findOne({FirstName: "Dhaval"})
 
 // update
+db.students.updateOne(
+  {FirstName: "Dhaval"},
+  {$set: {Email: "dhaval@gmail.com"}},
+  {upsert: true}
+);
 db.students.updateOne({FirstName: "Monika"},{$set: {Subjects: {Maths: 20, Science: 30, English: 30}}},{upsert: true});
 db.students.updateOne({_id: ObjectId('65b0dc3235200225a717e267')},{$set: {Subjects: {Maths: 50, Science: 50, English: 50}}},{upsert: true});
 db.students.updateMany({},{$set: {Course: 'Full-Stack Devlopment'}},{upsert: true});
