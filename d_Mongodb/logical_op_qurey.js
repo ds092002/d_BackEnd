@@ -4,4 +4,4 @@
 // db.books.find({$or: [{"pages" : {$eq: 384}},{"year" :{$in: [1610,1835,1952]}}]});
 // db.books.find({$nor: [{"pages" : {$eq: 384}},{"year" :{$in: [1610,1835,1952]}}]});
 // db.books.find({"pages" : {$not: {$gte: 384}}});
-db.books.find({"pages" : {$not: {$lte: 384}}});
+db.books.find({"pages" : {$not: {$lte: 384}}});     
