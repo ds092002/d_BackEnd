@@ -9,14 +9,7 @@ db.student.insertOne({
     age : 20,
     email: "john@test.in",
     hobbies : ["Sport","Dancing"],
-    address : {
-        line1 : '208, city-center',
-        line2 :'YogiChowk',
-        city : 'Surat',
-        state : 'Gujarat',
-        country : 'India',
-        pincode : 560001
-    }
+    teacher : "Girish"
 });
 
 db.student.insertMany([
@@ -25,6 +18,7 @@ db.student.insertMany([
         age : 22,
         email: "smith@test.in",
         subjects : ["Maths","Science"],      
+        teacher : "Vivek"
     },
     {
         name: "Priya",
@@ -35,6 +29,7 @@ db.student.insertMany([
             Science : 90,
             English : 80
         },
+        teacher : "Girish"
     },
     {
         name: "Disha",
@@ -45,9 +40,29 @@ db.student.insertMany([
             Science : 80,
             English : 70
         },
-    },
-])
+        teacher : "Nikunj"
+    }
+]);
 
+
+db.teacher.insertMany([
+    {
+        name: "Girish",
+        course: "BackEnd-Devlopment"
+    },
+    {
+        name: "Vivek",
+        course: "FrontEnd-Devlopment"
+    },
+    {
+        name: "Nikunj",
+        course: "UI/UX"
+    },
+    {
+        name: "Kuldeep",
+        course: "Mobile-Stack-Devlopment"
+    }
+]);
 
 // db.student.find();
 // db.student.findOne({name: "Disha"});
