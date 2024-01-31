@@ -283,3 +283,5 @@ db.orders.aggregate([
 
 
 db.products.updateOne({product_id: "2"},{$set: {product_quantity: 150}},{upsert: true});
+
+db.products.updateMany({product_id: "2"},{$set: {product_quantity: 150}},{upsert: true});
