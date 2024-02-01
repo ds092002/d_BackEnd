@@ -185,18 +185,18 @@ db.salesOrder.aggregate([
     },
     {
         $lookup: {
-               from: "product_masters",
-               localField: "sales_orderDetail.ProductNo",
-               foreignField: "ProductNo",
-               as: "No"
-             }
-    },
-    {
-        $lookup: {
                from: "sales_orderDetail",
                localField: "OrderNo",
                foreignField: "OrderNo",
                as: "Order"
+             }
+    },
+    {
+        $lookup: {
+               from: "product_masters",
+               localField: "sales_orderDetail.ProductNo",
+               foreignField: "ProductNo",
+               as: "No"
              }
     }
     ]);
