@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HTML</title>
+    <style>
+        /* input{
+            border:none;
+        }
+        input:focus{
+            outline: 5px solid red;
+        } */
+
+        /* marquee{
+            color:white;
+            font-size: 20px;
+        } */
+
+        /* table, th, td{
+                border:1px solid black;
+                border-collapse: collapse;
+                text-align: center;
+                width: 600PX;
+        } */
+    </style>
+</head>
+<body>
+    
+    <!--
+        MARQUEE TAG
+        LISTING TAG
+        HTML FORMATTING TAG
+        HTML INPUT TYPES
+    -->
+
+		<!-- marquee tag  / Block level tag -->
+        <!-- marquee tag is work in web pages for scrolleble text/image in perticuler direction-->
+
+            <!-- <marquee direction="left" loop="5" scrollamount="100" scrolldelay="500" bgcolor="green" height="400px" width="500px" behavior="scroll">this is marquee tag</marquee> -->
+    
+      <!-- Listing tag / block level tag -->
+
+        <!-- 
+        <ol>	Defines an ordered list.
+        <ul>	Defines an unordered list.
+        <dl>	Defines a description list.
+        <li>	Defines a list item in ordered or unordered lists.
+        <dt>	Defines a term in description list.
+        <dd>	Defines the description of a term in the description list. -->
+            
+
+        <!-- order list  start="1"   type="A / a / I / i / none" -->
+
+            <!-- <ol start="" type="1">
+                <li>option-1</li>
+                <li>option-2</li>
+                <li>option-3</li>
+                <li>option-4</li>
+                <li>option-5</li>
+                <li>option-6</li>
+                <li>option-7</li>
+            </ol> -->
+
+        <!-- unorder list  type="disc / circle / square / none" -->
+
+            <!-- <ul type="">
+                <li>optoion-1</li>
+                <li>optoion-2</li>
+                <li>optoion-3</li>
+                <li>optoion-4</li>
+                <li>optoion-5</li>
+                <li>optoion-6</li>
+            </ul> -->
+
+        <!-- Discription list  / Definition List -->
+
+            <!-- <dl>
+                <dt>Fruits</dt>
+                <dd>apple</dd>
+                <dd>mango</dd>
+                <dd>watermelon</dd>
+                <dd>banana</dd>
+                <dt>Browsers</dt>
+                <dd>crome</dd>
+                <dd>opera</dd>
+                <dd>safari</dd>
+                <dd>mozila firefox</dd>
+            </dl> -->
+
+        <!-- Nesting list -->
+
+            <!-- <ol>
+                <li>
+                    <dl>
+                        <dt>Fruits</dt>
+                        <dd>apple</dd>
+                        <dd>mango</dd>
+                        <dd>watermelon</dd>
+                        <dd>banana</dd>
+                        <dt>Browsers</dt>
+                        <dd>crome</dd>
+                        <dd>opera</dd>
+                        <dd>safari</dd>
+                        <dd>mozila firefox</dd>
+                    </dl>
+                </li>
+                <li>
+                    <ul>
+                        <li>optoion-1</li>
+                        <li>optoion-2</li>
+                        <li>optoion-3</li>
+                        <li>optoion-4</li>
+                        <li>optoion-5</li>
+                        <li>
+                            <ol start="" type="">
+                                <li>optoion-1</li>
+                                <li>optoion-2</li>
+                                <li>optoion-3</li>
+                                <li>optoion-4</li>
+                                <li>optoion-5</li>
+                                <li>optoion-6</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+         -->
+        <!-- Html Comment  -->
+
+        <!--html formatting tag / inline tag-->
+
+            <!-- <b>this is bold text.</b><br>
+            <strong>this is strong text.</strong><br>
+            <i>this is italic text.</i><br>
+            <em>this is emphesize text.</em><br>
+            <mark>this is makeble text.</mark><br>
+            <small>this is small text.</small><br>
+            <big>this is big text</big><br>
+            <del>this is deleted text.</del><br>
+            <ins>this is added text.</ins><br>
+            <u>this is underline text</u><br>
+            <s>this is s tag</s><br> -->
+            <!-- superscript text-->
+            <!-- (10)<sup>2</sup><br>  -->
+            <!-- subscript text-->
+            <!-- H<sub>2</sub>SO<sub>4</sub><br>  -->
+            
+        <!-- html input types / inline input types -->
+
+            <input type="button"><br>
+            <input type="button" value="SignUp"><br>
+            <input type="checkbox"><br>
+            <input type="radio"><br>
+            <input type="radio" name="Gender">Male<br>
+            <input type="radio" name="Gender">Female<br>
+            <input type="text" placeholder="First Name"><br>
+            <input type="date"><br>
+            <input type="time"><br>
+            <input type="datetime-local"><br>
+            <input type="password"><br>
+            <input type="submit"><br>
+            <input type="reset"><br>
+            <input type="email"><br>
+            <input type="tel"><br>
+            <input type="range"><br>
+            <input type="month"><br>
+            <input type="week"><br>
+            <input type="number" ><br>
+            <input type="image"><br>
+            <input type="hidden"><br>
+            <input type="url"><br>
+            <input type="color"><br>
+            <input type="search"><br>
+            <input type="file"><br>
+
+        <!-- text - creates a single-line text fields (default)
+            button - creates a button with no default functionality
+            checkbox - creates a checkbox
+            color - creates a color picker
+            date - creates a date picker
+            datetime-local - creates a date and time picker
+            email - creates an input field that allows the user to input a valid email address
+            file - creates an input field that lets the user upload a file or multiple files
+            hidden - creates an invisible input field
+            image - creates a button using an image
+            month - creates an input field that lets the user enter month and year
+            password - creates an input field that lets the user enter information securely
+            radio - creates a radio button
+            range - creates a range picker from which the user can select the value
+            reset - creates the button which clears all the form values to their default value
+            search - allows user to enter their search queries in the text fields
+            submit - allows user to submit form to the server
+            tel - defines the field to enter a telephone number
+            time - creates an input field that accepts time value
+            url - lets the user enter and edit a URL
+            week - lets the user pick a week and a year from a calendar -->
+
+
+    <!-- Html Table Tag -->
+        <!-- <table>
+            <caption> This is Table Tag </caption>
+            <figcaption>this is table tag</figcaption>
+            <thead>
+                <tr>
+                    <th>NO.</th>
+                    <th>Full Name</th>
+                    <th>Position</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Bill Gates</td>
+                    <td>Founder Microsoft</td>
+                    <td>$1000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Steave Jobs</td>
+                    <td>Founder Apple</td>
+                    <td>$1200</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Larry Page</td>
+                    <td>Founder Google</td>
+                    <td>$1100</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Mark Zukerburg</td>
+                    <td>Founder Facebook</td>
+                    <td>$1300</td>
+                </tr>
+            </tbody>
+        </table> -->
+
+        <!-- <hr style="border-top:2px solid red;"> -->
+
+    <!-- colspan and rowspan in html table -->
+
+        <!-- <table>
+            <caption> This is Table Tag </caption>
+                <tr>
+                    <th colspan="2">Full Name</th>
+                    <th>Last_Name</th>
+                    <th>Marks</th>
+                </tr>
+                <tr>
+                    <td>sonoo</td>
+                    <td>jaiswal</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td>james</td>
+                    <td>william</td>
+                    <td rowspan="3">80</td>
+                </tr>
+                <tr>
+                    <td>swati</td>
+                    <td>sironi</td>
+                    <td>80</td>
+                </tr>
+                <tr>
+                    <td>chetna</td>
+                    <td>sironi</td>
+                    <td>80</td>
+                </tr>
+        </table>
+         -->
+
+
+    <!-- colgroup in html table -->
+
+        <!-- <table>
+            <caption> This is Table Tag </caption>
+            <colgroup>
+                <col span="3" bgcolor="red">
+                <col span="1" bgcolor="yellow">
+                <col span="1" bgcolor="blue">
+            </colgroup>
+            <tr>
+                <th>First_Name</th>
+                <th>Last_Name</th>
+                <th>Marks</th>
+            </tr>
+            <tr>
+                <td>sonoo</td>
+                <td>jaiswal</td>
+                <td>60</td>
+            </tr>
+            <tr>
+                <td>james</td>
+                <td>william</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <td>swati</td>
+                <td>sironi</td>
+                <td>82</td>
+            </tr>
+            <tr>
+                <td>chetna</td>
+                <td>singh</td>
+                <td>72</td>
+            </tr>
+        </table> -->
+
+</body>
+</html>

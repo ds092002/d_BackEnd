@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word length Counter</title>
+	<link rel="stylesheet" href="word_length.css"> 
+</head>
+<body>
+<div class="container" class="heading">
+    <h1>Word length Counter</h1><br>
+    <textarea id="input" placeholder="Enter Your Text"></textarea><br>
+    <pre><button class="learn-more" onclick = lengthCounter() id="count-button"> Enter</button><button class="learn-more" onclick="clearText()" id="clear-button">Clear</button></pre><br>
+    <p id="strLength" style="color: rgb(0, 30, 255);" onclick="lengthCounter(document.getElementById('strLength').value)">Word Length : </p>
+</div> 
+<script src="word_length.js"></script>  
+</body>
+</html>
