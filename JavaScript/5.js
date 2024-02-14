@@ -47,7 +47,7 @@
 // console.log(data.charAt(56));
 // console.log(data.charCodeAt(56));
 
-// console.log(data.concat("Hello" , "\n Skill Qode"));
+// console.log(data.concat("Hello" , "\n World!"));
 
 let data = "JavaScript is the world's most popular programming language.JavaScript is the programming language of the Web.";
 
