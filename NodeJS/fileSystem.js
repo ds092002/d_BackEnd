@@ -73,8 +73,8 @@ const {add, product} = require('./basic.js');
 // });
 
 // Synchronously Method
-// fs.writeFileSync('hello.c',txt);
-// console.log("File successfully written");
+fs.writeFileSync('hello.c',txt);
+console.log("File successfully written");
 
 
 /* ======= File Append Method ======= */
