@@ -40,7 +40,7 @@ app.on('request',(req,res)=>{
 
     if (item[1] === '') {
         res.setHeader('Content-Type','text/html');
-        res.write('<h1 style="color:yellow">Welcome To User Page</h1>');
+        res.write('<h1 style="color:yellow">Welcome To Node JS</h1>');
         res.end();
     }else if(item[1] === 'user'){
         res.setHeader('Content-Type','text/html');
