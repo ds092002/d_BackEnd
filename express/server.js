@@ -36,7 +36,7 @@ server.patch('/',(req,res)=>{
 });
 server.delete('/',(req,res)=>{
     res.sendStatus(201);
-})
+});
 
 server.listen(port,()=>{
     console.log( `Server is running at http://localhost:${port}`);
