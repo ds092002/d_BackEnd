@@ -60,7 +60,7 @@ app.on('request',(req,res)=>{
         res.write('<h1 style="color:green">404 Page Not Found!</h1>');
         res.end();
     }
-})
+});
 
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);

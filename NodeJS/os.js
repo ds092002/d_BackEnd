@@ -3,7 +3,7 @@
 const os =  require('os');
 
 // console.log(os.arch());                       // Returns the architecture of the operating system - x32 or x64
-// console.log(os.availableParallelism());          // Returns the number of logical processors available to this process.
+// console.log(os.availableParallelism());       // Returns the number of logical processors available to this process.
 // console.log(os.cpus());                       // Returns information about each CPU/core installed on the machine // Returns the number of logical CPUs available to Node.js. It does not consider physical CPU
 // console.log(os.freemem());                    // Returns information about free memory in bytes
 // console.log(os.totalmem());                   // Returns information about total memory available to this process in bytes

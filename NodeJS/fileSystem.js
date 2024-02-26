@@ -2,10 +2,10 @@ const fs = require('fs');
 
 const {add, product} = require('./basic.js');
 // const {product} = require('./basic.js');
-// console.log(add(6,1));
-// console.log(product(7,1));
-// Synchronously and Asynchronously Method
+console.log(add(6,1));
+console.log(product(7,1));
 
+// Synchronously and Asynchronously Method
 
 /* ======= File Open Method ======= */
 // Asynchronously Method
