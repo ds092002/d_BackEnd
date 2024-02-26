@@ -14,8 +14,11 @@ let myFun = (req, res, next) => {
     }
 }
 
+// app.use(myFun);
 app.use(express.json())
-app.use(morgan("dev"));
+// app.use(morgan("dev")); // development server for logging requests tomorgan server instead  of the console 
+// app.use(morgan("combined")) //combined middle handler will log all requests and responses tomorgan and send them tomorgan middle handler with response headers and body
+// app.use(morgan("common")) // common is the default one used when combined option is not specified in config file.
 app.get('/',myFun,(req,res)=>{
     res.send('Welcome To Express JS');
 });
