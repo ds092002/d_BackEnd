@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon built_in.js"
+    "dev": "nodemon app2.js"
   },
   "author": "ds",
   "license": "ISC",
