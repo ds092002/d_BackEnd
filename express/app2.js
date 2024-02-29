@@ -11,6 +11,8 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 // END-points - CRUD
+
+//Create
 app.post('/products',(req,res)=>{
     // console.log(req.body);
     const product = req.body;
@@ -29,10 +31,14 @@ app.post('/products',(req,res)=>{
 //     }
 // });
 
+
+// Get All Product
 app.get('/products',(req,res)=>{
     res.status(200).json(products)
 });
 
+
+// Get Specific Product
 // app.get('/products,:id',(req,res)=>{
 //     const id = +req.params.id;
 app.get('/products/single-product',(req,res)=>{
@@ -41,6 +47,16 @@ app.get('/products/single-product',(req,res)=>{
     // res.status(201).json(products.find(product => product.id === id));
     let product = products.find((item)=> item.id === id);
     res.status(200).json(product);
+});
+
+//Replace Single Product
+app.put('/products/replace-product',(req,res)=>{
+    const id = +req.query.id;
+    let productIndex = products.findIndex((item) => item.id === id);
+    let product = products[productIndex];
+    products.splice(productIndex, 1, { ...req.body});
+    console.log(product);
+    res.status(200).json({message : "Product Replace Successfully......"});
 });
 
 app.listen(port,()=>{
