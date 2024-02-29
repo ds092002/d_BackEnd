@@ -17,6 +17,7 @@ app.post('/products',(req,res)=>{
     // console.log(req.body);
     const product = req.body;
     products.push(product);
+    console.log(product);
     // product.push({...req.body});
     res.status(201).json({message : 'Product Added Successfully....'})
 });
@@ -37,7 +38,7 @@ app.get('/products',(req,res)=>{
     res.status(200).json(products)
 });
 
-
+    
 // Get Specific Product
 // app.get('/products,:id',(req,res)=>{
 //     const id = +req.params.id;
@@ -59,6 +60,24 @@ app.put('/products/replace-product',(req,res)=>{
     res.status(200).json({message : "Product Replace Successfully......"});
 });
 
+
+//Update Single Product
+app.patch('/products/update-product',(req,res)=>{
+    const id = +req.query.id;
+    let productIndex = products.findIndex((item)=> item.id === id);
+    let product = products[productIndex];
+    products.splice(productIndex, 1, { ...product, ...req.body });
+    res.status(200).json({messgae : "Product Update Successfully......"});
+});
+
+//Delete Single Product
+app.delete('/products/delete-products',(req,res)=>{
+    const id = +req.query.id;
+    let productIndex = products.findIndex((item)=> item.id === id);
+    let product = products[productIndex];
+    products.splice(productIndex,1);
+    res.status(200 ).json({messgae : "Product Delete Successfully......"});
+});
 app.listen(port,()=>{
     console.log(`Server Start at http://localhost:${port}`);
 });
