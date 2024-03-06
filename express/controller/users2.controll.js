@@ -25,8 +25,8 @@ exports.addUsers = async (req, res) => {
 
 exports.getAllUsers = async (req, res) => {
     try {
-        let users = await User.find();
-        res.status(200).json(users);
+        let user = await User.find({isDelete: false});
+        res.status(200).json(user);
     } catch (error) {
         console.log(error);
         res.status(500).json({ message : `Internal Server Error...` });
@@ -36,7 +36,8 @@ exports.getAllUsers = async (req, res) => {
 exports.getUser = async (req, res) => {
     try {
         let userId = req.query.userId;
-        let user = await User.findById(userId);
+        // let user = await User.findById(userId);
+        let user = await User.findOne({ _id:userId, isDelete: false });
         if(!user){
             return res.status(404).json({ message : `User Not Found...` });
         }
@@ -69,7 +70,8 @@ exports.deleteUser = async (req, res) => {
         if(!user){
             return res.status(404).json({ message : `User Not Found...` });
         }
-        user = await User.findOneAndDelete({_id:user._id});
+        // user = await User.findOneAndDelete({_id:user._id});
+        user = await User.findOneAndUpdate({ _id: user._id}, { isDelete: true}, { new : true });
         res.status(200).json({ user, message : `User Deleted...` });
     } catch (error) {
         console.log(error);
