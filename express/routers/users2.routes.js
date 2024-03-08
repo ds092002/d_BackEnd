@@ -1,20 +1,27 @@
 const express = require('express');
 const userRoutes = express.Router();
-const { addUsers, 
-        getAllUsers, 
-        getUser, 
-        updateUser, 
-        deleteUser
+const { 
+        // addUsers,
+        registerUser,
+        loginUser, 
+        // getAllUsers, 
+        // getUser, 
+        // updateUser, 
+        // deleteUser
 } = require('../controller/users2.controll');
 
-userRoutes.post('/add-user', addUsers);
+// userRoutes.post('/add-user', addUsers);
 
-userRoutes.get('/getAll-users', getAllUsers);
+userRoutes.post('/register-user', registerUser);
 
-userRoutes.get('/get-users', getUser);
+userRoutes.post('/login-user', loginUser);
 
-userRoutes.put('/update-user', updateUser);
+// userRoutes.get('/getAll-users', getAllUsers);
 
-userRoutes.delete('/delete-user',deleteUser);
+// userRoutes.get('/get-users', getUser);
+
+// userRoutes.put('/update-user', updateUser);
+
+// userRoutes.delete('/delete-user',deleteUser);
 
 module.exports = userRoutes;
