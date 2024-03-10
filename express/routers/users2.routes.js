@@ -1,6 +1,6 @@
 const express = require('express');
 const userRoutes = express.Router();
-const {verifyToken} = require('../helpers/verifyToken');
+const { verifyToken } = require('../helpers/verifyToken');
 
 const { 
         // addUsers,
@@ -8,7 +8,7 @@ const {
         loginUser, 
         getAllUsers, 
         getUser, 
-        // updateUser, 
+        updateUser, 
         // deleteUser
 } = require('../controller/users2.controll');
 
@@ -20,9 +20,9 @@ userRoutes.post('/login-user', loginUser);
 
 userRoutes.get('/getAll-users',verifyToken, getAllUsers);
 
-userRoutes.get('/get-users', getUser);
+userRoutes.get('/get-users',verifyToken, getUser);
 
-// userRoutes.put('/update-user', updateUser);
+userRoutes.put('/update-user',verifyToken, updateUser);
 
 // userRoutes.delete('/delete-user',deleteUser);
 
