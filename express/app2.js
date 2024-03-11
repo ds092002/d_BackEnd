@@ -1,11 +1,13 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
-const port = 7007;
+const port = process.env.PORT;
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 // Database Connection
 async function main(){
-    await mongoose.connect('mongodb://127.0.0.1:27017/dhaval');
+    // await mongoose.connect('mongodb://127.0.0.1:27017/dhaval');
+    await mongoose.connect(process.env.MONGO_DB_URL);
 }
 main()
 .then(()=>console.log('DB is Connected SuccessFully.......'))
@@ -24,7 +26,7 @@ app.use(morgan('dev'));
 // app.use('/users',userRoutes)
 
 // User Server (mongoosh)
-const userRoutes = require('./routers/users2.routes');
+const userRoutes = require('./Routers/users2.routes');
 app.use('/api/user',userRoutes);
 
 app.listen(port,()=>{

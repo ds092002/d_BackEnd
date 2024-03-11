@@ -108,7 +108,7 @@ exports.updateUser = async (req, res) => {
 
 exports.deleteUser = async (req, res) => {
     try {
-        let userId = req.query.userId;
+        let userId = req.user._id;
         let user =  await User.findById(userId);
         if(!user){
             return res.status(404).json({ message : `User Not Found...` });

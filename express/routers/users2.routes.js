@@ -9,7 +9,7 @@ const {
         getAllUsers, 
         getUser, 
         updateUser, 
-        // deleteUser
+        deleteUser
 } = require('../controller/users2.controll');
 
 // userRoutes.post('/add-user', addUsers);
@@ -24,6 +24,6 @@ userRoutes.get('/get-users',verifyToken, getUser);
 
 userRoutes.put('/update-user',verifyToken, updateUser);
 
-// userRoutes.delete('/delete-user',deleteUser);
+userRoutes.delete('/delete-user',verifyToken, deleteUser);
 
 module.exports = userRoutes;
