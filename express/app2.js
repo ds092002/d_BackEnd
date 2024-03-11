@@ -18,8 +18,8 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 // Product Server
-// const productRoutes = require('./routers/product.routes');
-// app.use('/products', productRoutes);
+const productRoutes = require('./routers/product.routes');
+app.use('/products', productRoutes);
 
 // User Server
 // const userRoutes = require('./routers/user.routes');

@@ -22,6 +22,9 @@ const userSchema = mongoose.Schema({
         type: Boolean,
         default: false
     }
+    // newPassword: {
+    //     type : String
+    // }
 });
 
 module.exports = mongoose.model('users',userSchema);

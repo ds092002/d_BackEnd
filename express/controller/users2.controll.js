@@ -26,7 +26,7 @@ const jwt = require('jsonwebtoken');
 
 exports.registerUser = async (req, res) => {
     try {
-        const { firstName, lastName, gender, email, password, age } = req.body;
+        const { firstName, lastName, gender, email, password, age,newPassword } = req.body;
         let user = await User.findOne({ email: email, isDelete: false});
         if(user) {
             return res.status(400).json({ message: `User Is Already Registered...`});
@@ -121,3 +121,31 @@ exports.deleteUser = async (req, res) => {
         res.status(500).json({ message : `Internal Server Error: ${error.message}` });
     }
 };
+
+// exports.changePassword = async (req, res) => {
+//     try {
+//         const {email, password, newPassword} = req.body;
+//         // console.log(userId,password,newPassword);
+//         // let userId = req.query.userId;
+//         let user = await User.findById({ email: req.body.email, isDelete: false});
+//         console.log(user);
+//         if(!user){
+//             return res.status(404).json({ message : `User Not Found...`});
+//         }
+
+//         const isMatch =  await bcrypt.compare(password, user.password);
+//         console.log(isMatch);
+//         if (!isMatch) {
+//             return res.status(400).json({ message: 'Current password is incorrect' });
+//         }
+//         const hashPassword = await bcrypt.hash(newPassword, 10);
+//         user.password = hashPassword;
+//         console.log(user);
+//         await user.save();
+
+//         res.status(200).json({ message: 'Password changed successfully' });
+//     } catch (error) {
+//         console.log(error);
+//         res.status(500).json({ message : `Internal Server Error: ${error.message}` });
+//     }
+// }

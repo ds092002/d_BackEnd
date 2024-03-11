@@ -1,4 +1,5 @@
 const Product = require('../model/product.model');
+require('../helpers/verifyToken')
 
 exports.addProducts = async(req, res) => {
     try {
