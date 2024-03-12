@@ -30,6 +30,8 @@ const userRoutes = require('./Routers/users2.routes');
 app.use('/api/user',userRoutes);
 const productRoutes = require('./Routers/product2.routes');
 app.use('/api/product',productRoutes);
+const cartRoutes = require('./routers/cart.routes');
+app.use('/api/cart',cartRoutes);
 
 app.listen(port,()=>{
     console.log(`Server Start at http://localhost:${port}`);

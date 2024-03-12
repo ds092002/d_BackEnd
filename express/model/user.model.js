@@ -21,10 +21,10 @@ const userSchema = mongoose.Schema({
     isDelete: {
         type: Boolean,
         default: false
+    },
+    newPassword: {
+        type : String
     }
-    // newPassword: {
-    //     type : String
-    // }
 });
 
 module.exports = mongoose.model('users',userSchema);

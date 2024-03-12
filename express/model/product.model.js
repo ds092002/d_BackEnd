@@ -18,7 +18,7 @@ const productSchema = mongoose.Schema({
         default: false
     }
 });
-
+ 
 module.exports = mongoose.model('products',productSchema);
 
 
@@ -58,12 +58,6 @@ module.exports = mongoose.model('products',productSchema);
 //     "description" : "WildHorn Leather Wallet for Men I Ultra Strong Stitching I 6 Credit Card Slots I 2 Currency Compartments I 1 Coin Pocket",
 //     "price" : 499,
 //     "category" : "Wallet"
-// }
-// {
-//     "title" : "Skybags",
-//     "description" : "Skybags One Size Brat Black 46 Cms Casual Standard Backpack",
-//     "price" : 499,
-//     "category" : "Bag"
 // }
 // {
 //     "title" : "HotWheels Cars",

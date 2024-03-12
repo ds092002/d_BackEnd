@@ -8,7 +8,7 @@ const { addProducts,
         deleteProduct
 } = require('../controller/product2.controll');
 
-productRoutes.post('/add-product',verifyToken, addProducts);
+productRoutes.post('/add-product', addProducts);
 
 productRoutes.get('/getAll-products',verifyToken, getAllProducts);
 
@@ -18,4 +18,4 @@ productRoutes.put('/update-product',verifyToken, updateProduct);
 
 productRoutes.delete('/delete-product',verifyToken, deleteProduct);
 
-module.exports = productRoutes; 
+module.exports = productRoutes;  

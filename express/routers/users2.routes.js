@@ -27,6 +27,6 @@ userRoutes.put('/update-user',verifyToken, updateUser);
 
 userRoutes.delete('/delete-user',verifyToken, deleteUser);
 
-// userRoutes.put('/change-password', changePassword);
+userRoutes.put('/change-password',verifyToken, changePassword);
 
 module.exports = userRoutes;
