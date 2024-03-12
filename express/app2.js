@@ -18,8 +18,8 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 // Product Server
-const productRoutes = require('./routers/product.routes');
-app.use('/products', productRoutes);
+// const productRoutes = require('./routers/product.routes');
+// app.use('/products', productRoutes);
 
 // User Server
 // const userRoutes = require('./routers/user.routes');
@@ -28,7 +28,9 @@ app.use('/products', productRoutes);
 // User Server (mongoosh)
 const userRoutes = require('./Routers/users2.routes');
 app.use('/api/user',userRoutes);
+const productRoutes = require('./Routers/product2.routes');
+app.use('/api/product',productRoutes);
 
 app.listen(port,()=>{
     console.log(`Server Start at http://localhost:${port}`);
-});
+}); 

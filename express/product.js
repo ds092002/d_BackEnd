@@ -14,8 +14,8 @@ main()
 app.use(express.json());
 app.use(morgan('dev'));
 
-const productRoutes = require('./routers/product2.routes');
-app.use('/api/product',productRoutes);
+    // const productRoutes = require('./Routers/product2.routes');
+    // app.use('/api/product',productRoutes);
 
 app.listen(port,() => {
     console.log(`Server Start at http://localhost:${port}`);
