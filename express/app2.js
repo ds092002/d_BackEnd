@@ -27,11 +27,13 @@ app.use(morgan('dev'));
 
 // User Server (mongoosh)
 const userRoutes = require('./Routers/users2.routes');
-app.use('/api/user',userRoutes);
 const productRoutes = require('./Routers/product2.routes');
-app.use('/api/product',productRoutes);
 const cartRoutes = require('./routers/cart.routes');
+const orderRoutes = require('./routers/order.routes');
+app.use('/api/user',userRoutes);
+app.use('/api/product',productRoutes);
 app.use('/api/cart',cartRoutes);
+app.use('/api/order',orderRoutes);
 
 app.listen(port,()=>{
     console.log(`Server Start at http://localhost:${port}`);
