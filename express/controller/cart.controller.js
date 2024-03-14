@@ -1,5 +1,5 @@
 const Cart = require('../model/cart.model');
-const { loginUser } = require('./users2.controll');
+const { loginUser } = require('./users.controll');
 
 exports.addToCart = async (req, res) =>{
     try {
@@ -67,6 +67,7 @@ exports.deleteCart = async (req, res) => {
             return res.status(404).json({ message: `Cart Not Found...${console.error()}` });        
         }
         cart = await Cart.findOneAndUpdate(cart._id, { isDelete: true}, { new : true});
+        console.log(cart._id);
         res.status(200).json({cart, message: `Cart Iteam Deleted Successfuly`});
     } catch (error) {
         console.log(error);

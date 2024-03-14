@@ -1,58 +1,76 @@
-const products = require('../public/product.json');
+const Product = require('../model/product.model');
+// require('../helpers/verifyToken')
 
-// Cerate & Add Data
-exports.addProduct = (req,res)=>{
-    // console.log(req.body);
-    const product = req.body;
-    products.push(product);
-    console.log(product);
-    // product.push({...req.body});
-    res.status(201).json({message : 'Product Added Successfully....'})
+exports.addProducts = async(req, res) => {
+    try {
+        const{title, description, price, category} = req.body;
+        console.log(req.file);
+        let newProduct = await Product.create({
+            title,
+            description,
+            price,
+            category
+        });
+        console.log(newProduct);
+        newProduct.save();
+        res.status(201).json({product: newProduct, meassage : `Product Added SuccesFully`});
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({message : `Internal Server Error`});
+    }
+}; 
+
+exports.getAllProducts = async(req, res) => {
+    try {
+        let product = await Product.find({isDelete: false});
+        res.status(200).json(product);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({message : `Internal Server Error`});
+    }
 };
 
-// Get All Product
-exports.getAllProduct = (req,res)=>{
-    res.status(200).json(products)
+exports.getProduct = async(req, res) => {
+    try {
+        let productId = req.query.productId;
+        let product = await Product.findOne({_id:productId, isDelete: false});
+        if(!product){
+            return res.status(404).json({message: `No Product Found with the given ID.`});
+        }
+        res.status(200).json({product});
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({message : `Internal Server Error`});
+    }
 };
 
-// Get Specific Product
-// exports.getProduct = (req,res)=>{
-//     const id = +req.params.id;
-exports.getProduct = (req,res)=>{
-    const id = +req.query.id;
-    // console.log(id);
-    // res.status(201).json(products.find(product => product.id === id));
-    let product = products.find((item)=> item.id === id);
-    res.status(200).json(product);
+exports.updateProduct = async(req, res) => {
+    try {
+        let productId = req.query.productId;
+        let product = await Product.findById(productId);
+        if(!product){
+            return res.status(404).json({message : `No Product Found With the Given Id.`});
+        }
+        product = await Product.findOneAndUpdate({_id:product._id}, {$set : { ...req.body}}, { new : true});
+        res.status(200).json({product,message : `Product Updated SuccesFully`});
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({message : `Internal Server Error`});
+    }
 };
 
-//Replace Single Product
-exports.replaceProduct = (req,res)=>{
-    const id = +req.query.id;
-    let productIndex = products.findIndex((item) => item.id === id);
-    let product = products[productIndex];
-    products.splice(productIndex, 1, { ...req.body});
-    console.log(product);
-    res.status(200).json({message : "Product Replace Successfully......"});
-};
+exports.deleteProduct = async(req, res) => {
+    try {
+        let productId = req.query.productId;
+        let product = await Product.findById(productId);
+        if(!product){
+            return res.status(404).json({message : `No Product Found With The Given Id.`});
+        }
+        product = await Product.findOneAndUpdate({_id:product._id}, {isDelete: true},{new : true});
+        res.status(200).json({product,message : `This Product will be Deleted.`});
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({message : `Internal Server Error`});
+    }
+}
 
-//Update Single Product
-exports.updateProduct = (req,res)=>{
-    const id = +req.query.id;
-    let productIndex = products.findIndex((item)=> item.id === id);
-    let product = products[productIndex];
-    products.splice(productIndex, 1, { ...product, ...req.body });
-    res.status(200).json({messgae : "Product Update Successfully......"});
-};
-
-//Delete Single Product
-exports.deleteProduct = (req,res)=>{
-    const id = +req.query.id;
-    let productIndex = products.findIndex((item)=> item.id === id);
-    let product = products[productIndex];
-    products.splice(productIndex,1);
-    res.status(200 ).json({messgae : "Product Delete Successfully......"});
-};
-
-
-// module.exports = {}
