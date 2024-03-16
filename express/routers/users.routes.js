@@ -10,8 +10,10 @@ const {
         getUser, 
         updateUser, 
         deleteUser,
-        changePassword
+        changePassword,
+        addNewUser
 } = require('../controller/users.controll');
+const { upload } = require('../helpers/imageUpload');
 
 // userRoutes.post('/add-user', addUsers);
 
@@ -28,5 +30,7 @@ userRoutes.put('/update-user',verifyToken, updateUser);
 userRoutes.delete('/delete-user',verifyToken, deleteUser);
 
 userRoutes.put('/change-password',verifyToken, changePassword);
+
+userRoutes.post('/add-user', upload.single('profileImage'), addNewUser);
 
 module.exports = userRoutes;
