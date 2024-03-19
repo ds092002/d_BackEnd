@@ -1,6 +1,6 @@
 const Product = require('../model/product.model');
 module.exports = class ProductServices {
-    async addNewProduct(body){
+    async addNewProduct(body) {
         try {
             return await Product.create(body)
         } catch (error) {
@@ -8,7 +8,7 @@ module.exports = class ProductServices {
             return error.message;
         }
     }
-    async getAllProducts(body){
+    async getAllProducts(body) {
         try {
             return await Product.find(body);
         } catch (error) {
@@ -16,7 +16,7 @@ module.exports = class ProductServices {
             return error.message;
         }
     }
-    async getProduct(body){
+    async getProduct(body) {
         try {
             return await Product.findOne(body);
         } catch (error) {
@@ -24,15 +24,15 @@ module.exports = class ProductServices {
             return error.message;
         }
     }
-    async updateProduct(body) {
+    async updateProduct(id, body) {
         try {
-            return await Product.findOneAndUpdate({ _id: body._id }, { $set: { ...body } }, { new: true });
-        }catch (error) {
+            return await Product.findOneAndUpdate({ _id: id }, { $set:  body  }, { new: true });
+        } catch (error) {
             console.log(error);
             return res.status(500).json({ error: 'Product update failed', message: error.message });
         }
     }
-    async deleteProduct(body){
+    async deleteProduct(body) {
         try {
             return await Product.findOneAndUpdate(body);
         } catch (error) {

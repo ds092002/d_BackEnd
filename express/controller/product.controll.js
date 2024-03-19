@@ -84,7 +84,7 @@ exports.getProduct =  async (req, res) => {
 
 exports.updateProduct = async (req, res) => {
     let id = req.query.id;
-    let product = await productService.updateProduct({_id:id }, { isDelete: false, ...req.body , _id: undefined}, { new: true });
+    let product = await productService.updateProduct(id, {...req.body});
     console.log(req.body);
     res.status(201).json(product);
 }
