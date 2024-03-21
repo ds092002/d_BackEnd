@@ -124,7 +124,7 @@ exports.deleteUser = async (req, res) => {
 
 exports.changePassword = async (req, res) => {
     try {
-        const { email, password, newPassword } = req.body;
+        const { email, password, newPassword, confirmPassword } = req.body;
         let userId = req.user._id;
         let user = await User.findById(userId);
         if (!user) {
@@ -133,6 +133,12 @@ exports.changePassword = async (req, res) => {
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
             return res.status(400).json({ message: 'Current password is incorrect' });
+        }
+        if(password == newPassword){
+            return res.json({ message: `Old Password and New Password Are Same.`})
+        }
+        if (newPassword !== confirmPassword) {
+            return res.json({ message: `New Password and Confirm  Password are not same.` })
         }
         const hashPassword = await bcrypt.hash(newPassword, 10);
         user.password = hashPassword;
