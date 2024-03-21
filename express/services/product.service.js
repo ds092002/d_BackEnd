@@ -32,13 +32,5 @@ module.exports = class ProductServices {
             return res.status(500).json({ error: 'Product update failed', message: error.message });
         }
     }
-    async deleteProduct(body) {
-        try {
-            return await Product.findOneAndUpdate(body);
-        } catch (error) {
-            console.log(error);
-            return error.message;
-        }
-    }
 }
 

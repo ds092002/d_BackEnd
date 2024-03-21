@@ -105,6 +105,8 @@ exports.updateProduct = async (req, res) => {
 // }
 
 exports.deleteProduct = async (req, res) => {
-    let id = req.params.id;
-    let product = await productService.deleteProduct({_id: id}, {isDelete: true}, {new: true});
+    let id = req.query.id;
+    let product = await productService.updateProduct(id, {isDelete: true, new : true});
+    console.log(product);
+    res.status(201).json(product);
 }
