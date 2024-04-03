@@ -17,7 +17,13 @@ insert into client_master(ClientNo,CName,CAddress1,CAddress2,City,Pincode,CState
 ('C00005','Hansel Colaco','P-7','Bandra','Mumbai',400060,'Maharastra',2000),
 ('C00006','Deepak Sharma','L9','Long Street','Mangalore',560050,'Karnataka',0);
 
-
+create table user(
+    firstName varchar(255),
+    lastname varchar(255),
+    email varchar(255),
+    password varchar(255),
+    mobileNo varchar(225)
+);
 -- select CName from client_master;     // find all clients name
 
 -- select * from client_master;

@@ -63,3 +63,22 @@ exports.deleteOrder = async (req, res) => {
         res.status(500).json({ message: `Internal Server Error ${console.error()}`});
     }
 }
+
+// // admin can access this route to get all 
+// exports.adminGetAllOrders = async (req,res)=>{
+//    const orders=await orderServiece.adminGetAllOrders();
+//    // console.log(orders);
+//    res.status(200).json(orders);
+// }
+
+// exports.adminUpdateOrderStatus=(req,res)=>{
+//     let updateData={
+//         status : req.body.status
+//     };
+    
+//     orderServiece.update OrderStatus(req.params.id,updateData)
+//     .then((result)=>{
+//        res.status(201).json(result);
+//        })
+//       .catch((err)=>res.status(500).json(err));
+// }
