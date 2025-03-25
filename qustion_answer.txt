@@ -1,0 +1,1167 @@
+
+### **Basics of Node.js**
+1. **What is Node.js?**  
+   Node.js is an open-source, cross-platform runtime environment that executes JavaScript code outside a browser, built on Chrome's V8 JavaScript engine.  
+
+2. **What are the key features of Node.js?**  
+   - **Asynchronous and Event-Driven:** Non-blocking operations.  
+   - **Single-Threaded:** Handles multiple requests in a single thread using event loops.  
+   - **Fast Execution:** Built on the V8 engine.  
+   - **Cross-Platform:** Runs on Windows, Linux, and macOS.  
+
+3. **What is the difference between Node.js and JavaScript?**  
+   - JavaScript is a programming language used for client-side development.  
+   - Node.js is a runtime environment for executing JavaScript on the server side.  
+
+---
+
+### **Modules and Architecture**
+4. **What is the Node.js module system?**  
+   The Node.js module system allows developers to encapsulate code into reusable modules. There are built-in, third-party, and user-defined modules.  
+
+5. **What is the difference between `require()` and `import`?**  
+   - `require()`: CommonJS module system, used in Node.js.  
+   - `import`: ES6 module system, supports static imports.  
+
+6. **What is the purpose of the `package.json` file?**  
+   The `package.json` file contains metadata about a Node.js project, including dependencies, scripts, and versioning.  
+
+7. **What is the purpose of the `module.exports` and `exports`?**  
+   - `module.exports`: Used to export a single item (function, object, etc.).  
+   - `exports`: A shorthand for adding properties to `module.exports`.  
+
+---
+
+### **Event Loop and Asynchronous Programming**
+8. **What is the event loop in Node.js?**  
+   The event loop is a mechanism that allows Node.js to perform non-blocking I/O operations by offloading tasks to the system kernel and processing them asynchronously.
+
+9. **What is the difference between asynchronous and synchronous programming?**  
+   - **Asynchronous:** Non-blocking; operations run in the background.  
+   - **Synchronous:** Blocking; operations are executed sequentially.  
+
+10. **What are callbacks in Node.js?**  
+    A callback is a function passed as an argument to another function, executed after an asynchronous operation completes.  
+    ```javascript
+    fs.readFile('file.txt', (err, data) => {
+        if (err) throw err;
+        console.log(data.toString());
+    });
+    ```
+
+---
+
+### **File System and Streams**
+11. **How do you read a file in Node.js?**  
+    Using the `fs` module:  
+    ```javascript
+    const fs = require('fs');
+    fs.readFile('file.txt', 'utf8', (err, data) => {
+        if (err) throw err;
+        console.log(data);
+    });
+    ```
+
+12. **What are streams in Node.js?**  
+    Streams are used to handle reading/writing data in chunks, instead of loading the entire data at once. Types of streams:  
+    - **Readable:** For reading data.  
+    - **Writable:** For writing data.  
+    - **Duplex:** For both reading and writing.  
+    - **Transform:** For modifying data while reading/writing.
+
+---
+
+### **Middleware and Frameworks**
+13. **What is middleware in Node.js?**  
+    Middleware functions in Node.js are functions that have access to the request, response, and `next()` in the application’s request-response cycle.  
+
+14. **What is Express.js?**  
+    Express.js is a lightweight, flexible framework for Node.js that simplifies handling requests, routing, and middleware.
+
+15. **How do you set up a simple server in Express.js?**  
+    ```javascript
+    const express = require('express');
+    const app = express();
+    app.get('/', (req, res) => res.send('Hello World!'));
+    app.listen(3000, () => console.log('Server running on port 3000'));
+    ```
+
+---
+
+### **APIs and HTTP**
+16. **What is RESTful API in Node.js?**  
+    A RESTful API follows the REST architectural style, using standard HTTP methods (GET, POST, PUT, DELETE) for communication.
+
+17. **How do you handle errors in Node.js?**  
+    By using try-catch blocks, middleware, or the `error` event:  
+    ```javascript
+    app.use((err, req, res, next) => {
+        console.error(err.stack);
+        res.status(500).send('Something went wrong!');
+    });
+    ```
+
+18. **What is the `http` module in Node.js?**  
+    The `http` module allows Node.js to create servers and handle HTTP requests and responses.  
+    Example:  
+    ```javascript
+    const http = require('http');
+    const server = http.createServer((req, res) => {
+        res.end('Hello, Node.js!');
+    });
+    server.listen(3000);
+    ```
+
+---
+
+### **Database**
+19. **Which databases can you use with Node.js?**  
+    - Relational: MySQL, PostgreSQL.  
+    - NoSQL: MongoDB, CouchDB.  
+
+20. **How do you connect Node.js to a MongoDB database?**  
+    Using the `mongoose` library:  
+    ```javascript
+    const mongoose = require('mongoose');
+    mongoose.connect('mongodb://localhost:27017/mydb', { useNewUrlParser: true, useUnifiedTopology: true });
+    ```
+
+---
+
+### **Advanced Topics**
+21. **What is clustering in Node.js?**  
+    Clustering allows Node.js to utilize multiple cores of a processor, creating child processes to handle multiple requests concurrently.
+
+22. **What are child processes in Node.js?**
+
+
+
+
+
+
+
+1. **What is MERN stack?**
+   - MERN stands for MongoDB, Express.js, React.js, and Node.js. It is a full-stack JavaScript framework used to build web applications.
+
+2. **What is MongoDB?**
+   - MongoDB is a NoSQL database that stores data in JSON-like documents with flexible schemas.
+
+3. **What is Express?**
+   - Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+
+4. **What is Node?**
+   - Node.js is a JavaScript runtime built on Chrome's V8 engine that allows you to run JavaScript on the server side.
+
+5. **What is React?**
+   - React is a JavaScript library for building user interfaces, focusing on component-based architecture and efficient rendering using a virtual DOM.
+
+6. **What is a token?**
+   - A token is a piece of data used for authentication and authorization purposes in web applications.
+
+7. **Why use tokens?**
+   - Tokens are used to securely transmit information between parties and to manage user authentication and authorization.
+
+8. **Difference between JavaScript and TypeScript?**
+   - JavaScript is a dynamically typed scripting language, whereas TypeScript is a statically typed superset of JavaScript with optional type annotations.
+
+9. **What is middleware?**
+   - Middleware functions in Express.js are functions that have access to the request and response objects and can modify them before passing them to the next function.
+
+10. **Why use middleware?**
+   - Middleware is used to handle tasks like authentication, logging, error handling, and request processing.
+
+11. **Why use MongoDB?**
+   - MongoDB offers flexibility, scalability, and high performance, making it suitable for modern web applications.
+
+12. **What is DSA?**
+   - Data Structures and Algorithms (DSA) are a set of techniques to organize, manage, and store data efficiently.
+
+13. **What is LinkedList?**
+   - A LinkedList is a linear data structure consisting of nodes where each node contains data and a reference to the next node.
+
+14. **What is Stack in DSA?**
+   - A stack is a linear data structure that follows the LIFO (Last In, First Out) principle.
+
+15. **What is Queue in DSA?**
+   - A queue is a linear data structure that follows the FIFO (First In, First Out) principle.
+
+16. **Types of sorting in DSA?**
+   - Bubble Sort, Selection Sort, Insertion Sort, Merge Sort, Quick Sort, Heap Sort, and Counting Sort.
+
+17. **What is Linear Search in DSA?**
+   - Linear Search is a searching algorithm that sequentially checks each element in a list until the desired element is found.
+
+18. **What is Binary Search in DSA?**
+   - Binary Search is an efficient searching algorithm that divides the search space in half at each step.
+
+19. **Difference between let, var, const?**
+   - `var` has function scope, `let` has block scope, and `const` is used for constants.
+
+20. **What are closures in JavaScript?**
+   - Closures are functions that have access to variables from their outer function scope even after the outer function has returned.
+
+21. **Difference between find() and findOne() in MongoDB?**
+   - `find()` returns an array of documents, while `findOne()` returns the first matching document.
+
+22. **Difference between find and filter in JavaScript?**
+   - `find()` returns the first matching element, while `filter()` returns an array of all matching elements.
+
+23. **Difference between PUT and PATCH?**
+   - PUT updates the entire resource, while PATCH updates specific fields of a resource.
+
+24. **What is MVC structure?**
+   - MVC (Model-View-Controller) is a design pattern that separates application logic into three interconnected components.
+
+25. **Difference between SPA and MPA?**
+   - SPA (Single Page Application) loads a single HTML page and dynamically updates content, whereas MPA (Multiple Page Application) loads new pages from the server.
+
+26. **What are aggregation pipelines?**
+   - Aggregation pipelines in MongoDB process data in stages such as filtering, grouping, and transforming.
+
+27. **How to get all products in the controller?**
+   - Use `Product.find()` in the controller function to fetch all product records from MongoDB.
+
+28. **How to get all products in React.js?**
+   - Use `fetch` or `axios` to call the API and retrieve product data.
+
+29. **What is $lookup in MongoDB?**
+   - `$lookup` is used to perform joins between different collections in MongoDB.
+
+30. **Why use $lookup in MongoDB?**
+   - To combine data from multiple collections similar to SQL joins.
+
+31. **Why use React.js?**
+   - React provides component-based architecture, fast rendering, and state management for building scalable applications.
+
+32. **What are props in React?**
+   - Props are inputs passed to components to make them reusable.
+
+33. **How many hooks in React.js and which?**
+   - Some important hooks include `useState`, `useEffect`, `useContext`, `useReducer`, `useMemo`, `useRef`, and `useCallback`.
+
+Hook	When to Use
+useState  	   Manage component-level state
+useEffect	   Handle side effects
+useContext	   Avoid prop drilling
+useReducer	   Complex state management with actions
+useMemo      	Optimize expensive computations
+useRef	      Persist values without re-rendering
+useCallback	   Prevent function recreation for performance
+
+
+34. **Why use components in React.js?**
+   - Components make code reusable, maintainable, and modular.
+
+35. **What is CRUD?**
+   - CRUD stands for Create, Read, Update, and Delete operations.
+
+36. **What is JSX?**
+   - JSX is a syntax extension for JavaScript that allows writing HTML-like code within React components.
+
+37. **Difference between map() and forEach() in JavaScript?**
+   - `map()` returns a new array, whereas `forEach()` does not return anything.
+
+38. **What is Tailwind CSS?**
+   - Tailwind CSS is a utility-first CSS framework for rapidly building custom designs.
+
+39. **Why use Tailwind CSS?**
+   - Tailwind provides utility classes that allow for faster styling without writing custom CSS.
+
+40. **What are keys in React?**
+   - Keys are unique identifiers for elements in lists to help React identify changes efficiently.
+
+41. **Why use keys in React.js?**
+   - To optimize rendering by helping React distinguish elements when they are added, removed, or changed.
+
+42. **What happens if keys are not used in React?**
+   - Without keys, React may not update elements correctly, leading to potential UI bugs and performance issues.
+
+
+
+React
+
+1. **What is React?**
+   - React is a JavaScript library for building user interfaces, focusing on component-based architecture and efficient rendering using a virtual DOM.
+
+2. **What are the advantages of using React?**
+   - Component reusability, virtual DOM for faster updates, unidirectional data flow, strong community support, and efficient rendering.
+
+3. **What are the limitations of React?**
+   - SEO challenges, steep learning curve for beginners, and requirement of additional libraries for state management and routing.
+
+4. **What is useState() in React?**
+   - useState() is a Hook that allows functional components to manage state by returning a state variable and a function to update it.
+
+5. **What are the keys in React?**
+   - Keys are unique identifiers for elements in lists to help React identify changes efficiently.
+
+6. **What is JSX?**
+   - JSX is a syntax extension for JavaScript that allows writing HTML-like code within React components.
+
+7. **What are the differences between functional and class components?**
+   - Functional components are stateless and simpler, while class components support state and lifecycle methods.
+
+8. **What is the virtual DOM? How does React use the virtual DOM to render the UI?**
+   - Virtual DOM is a lightweight copy of the real DOM; React updates it first, then efficiently updates only the changed parts of the real DOM.
+
+9. **What are the differences between controlled and uncontrolled components?**
+   - Controlled components have state managed by React, 
+     whereas uncontrolled components manage their state using the DOM.
+
+10. **What are props in React?**
+   - Props are inputs passed to components to make them reusable and dynamic.
+
+11. **Explain the React state and props.**
+   - State is internal and mutable, while props are external and immutable.
+
+12. **Explain about types of side effects in the React component.**
+   - Side effects include data fetching, subscriptions, and manually changing the DOM.
+
+13. **What is prop drilling in React?**
+   - Prop drilling refers to passing props down multiple levels of components.
+
+14. **What are error boundaries?**
+   - Error boundaries are React components that catch JavaScript errors in child components and display a fallback UI.
+
+15. **What are React Hooks?**
+   - Hooks are functions that allow functional components to use state and lifecycle features.
+
+16. **Explain React Hooks.**
+   - React Hooks allow the use of state and other React features in functional components.
+
+17. **What are the rules that must be followed while using React Hooks?**
+   - Hooks should only be called at the top level of a component and inside React functional components.
+
+18. **What is the use of useEffect React Hooks?**
+   - useEffect is used to perform side effects in components such as data fetching and DOM manipulation.
+
+19. **Why do React Hooks make use of refs?**
+   - Refs allow access to DOM elements and persist values across renders without causing re-renders.
+
+20. **What are Custom Hooks?**
+   - Custom Hooks are reusable functions that encapsulate logic using existing React Hooks.
+
+21. **Explain Strict Mode in React.**
+   - Strict Mode is a tool for highlighting potential problems in an application by running additional checks.
+
+22. **How to prevent re-renders in React?**
+   - Use React.memo, useCallback, and useMemo to prevent unnecessary re-renders.
+
+23. **What are the different ways to style a React component?**
+   - Inline styles, CSS modules, styled-components, and Tailwind CSS.
+
+24. **Name a few techniques to optimize React app performance.**
+   - Code splitting, lazy loading, memoization, and using efficient state management.
+
+25. **How to pass data between React components?**
+   - Using props, context API, or state management libraries like Redux.
+
+26. **What are Higher Order Components?**
+   - Higher Order Components (HOCs) are functions that take a component and return a new component with additional functionality.
+
+27. **What are the different phases of the component lifecycle?**
+   - Mounting, updating, and unmounting phases.
+
+28. **What are the lifecycle methods of React?**
+   - constructor, render, componentDidMount, componentDidUpdate, componentWillUnmount.
+
+29. **Does React Hook work with static typing?**
+   - Yes, with TypeScript, which provides static typing support.
+
+30. **Explain about types of Hooks in React.**
+   - Common Hooks include useState, useEffect, useContext, useRef, useReducer, useCallback, and useMemo.
+
+31. **Differentiate React Hooks vs. Classes.**
+   - Hooks provide a simpler and cleaner way to handle state and side effects compared to class components.
+
+32. **How does the performance of using Hooks differ in comparison with the classes?**
+   - Hooks reduce code complexity and improve maintainability, but both approaches have similar performance.
+
+33. **Do Hooks cover all the functionalities provided by the classes?**
+   - Yes, Hooks provide almost all functionalities with better readability and maintainability.
+
+34. **What is React Router?**
+   - React Router is a library for handling navigation in a React application.
+
+35. **Can React Hook replace Redux?**
+   - In some cases, React's Context API and useReducer can replace Redux, but Redux is still useful for complex state management.
+
+36. **Explain conditional rendering in React.**
+   - Conditional rendering allows rendering different components based on conditions.
+
+37. **Explain how to create a simple React Hooks example program.**
+   - Use useState and useEffect to manage and update state inside a functional component.
+
+38. **How to create a switching component for displaying different pages?**
+   - Use React Router's `Route` and `Switch` components.
+
+39. **How to re-render the view when the browser is resized?**
+   - Use the `useEffect` hook to listen to the window resize event and update the state accordingly.
+
+40. **How to pass data between sibling components using a React router?**
+   - Use React Context API or lift state up to a common parent component and pass via props.
+
+
+
+
+
+javascript
+
+
+1. **What is JavaScript? How does it differ from other programming languages?**
+   - JavaScript is a high-level, interpreted programming language used primarily for web development. It allows for dynamic content updates, interactive user interfaces, and client-side scripting. Unlike other programming languages such as Python or Java, JavaScript runs in the browser and does not require compilation.
+
+2. **Explain the difference between null and undefined in JavaScript.**
+   - `null` is an assigned value representing the intentional absence of any object value.
+   - `undefined` means a variable has been declared but has not been assigned a value.
+
+3. **Discuss the role of ECMAScript in relation to JavaScript.**
+   - ECMAScript (ES) is the standard on which JavaScript is based. It defines the language's syntax, features, and functionalities. JavaScript is an implementation of ECMAScript, and updates like ES6 introduce new features.
+
+4. **What are the different data types in JavaScript?**
+   - Primitive Types: `String`, `Number`, `Boolean`, `Null`, `Undefined`, `Symbol`, `BigInt`
+   - Non-primitive Types: `Object`, `Array`, `Function`
+
+5. **Explain the concept of hoisting in JavaScript.**
+   - Hoisting is JavaScript's behavior of moving variable and function declarations to the top of their containing scope before code execution. Only declarations are hoisted, not initializations.
+
+6. **How does prototypal inheritance work in JavaScript?**
+   - In JavaScript, objects can inherit properties and methods from another object via the prototype chain. Every object has an internal link to another object called its prototype.
+
+7. **Explain the difference between var, let, and const in JavaScript.**
+   - `var`: Function-scoped, hoisted, can be re-declared.
+   - `let`: Block-scoped, cannot be re-declared, no hoisting issues.
+   - `const`: Block-scoped, cannot be reassigned, used for constants.
+
+8. **What is the scope of a variable declared using var, let, and const?**
+   - `var`: Function scope.
+   - `let` and `const`: Block scope.
+
+9. **Discuss the concept of closures in JavaScript and their use cases.**
+   - A closure is a function that remembers and accesses variables from its outer scope even after the outer function has finished executing. Use cases include data encapsulation and private variables.
+
+10. **Explain callback functions and their significance in JavaScript.**
+   - A callback function is a function passed as an argument to another function and executed later. It is crucial for asynchronous programming (e.g., handling API responses).
+
+11. **Describe the differences between function declarations and function expressions in JavaScript.**
+   - Function Declaration: `function foo() {}` - Hoisted and available before execution.
+   - Function Expression: `const foo = function() {}` - Not hoisted.
+
+12. **What are arrow functions, and how do they differ from regular functions?**
+   - Arrow functions provide a shorter syntax and do not bind their own `this` value, making them useful in callbacks and functional programming.
+
+13. **How do you access and manipulate the DOM using JavaScript?**
+   - Use methods like `document.getElementById()`, `querySelector()`, and properties such as `innerHTML`, `style`, and event handlers.
+
+14. **Explain event bubbling and event delegation in JavaScript.**
+   - Event bubbling: Events propagate from the target element up to the parent elements.
+   - Event delegation: Event listeners are added to parent elements to handle events from child elements.
+
+15. **What are the different ways to handle events in JavaScript?**
+   - Inline event handlers, `addEventListener()`, and event properties like `onclick`.
+
+16. **Discuss the purpose and usage of event.preventDefault() in JavaScript.**
+   - It prevents the default action of an element (e.g., prevents a form from submitting when clicking a button).
+
+17. **Explain the concept of asynchronous programming in JavaScript.**
+   - Asynchronous programming allows tasks to run in the background without blocking code execution, using techniques like callbacks, Promises, and async/await.
+
+18. **How do callbacks, Promises, and async/await aid in handling asynchronous operations?**
+   - Callbacks: Handle asynchronous tasks but lead to callback hell.
+   - Promises: Provide better readability and chaining with `.then()`.
+   - async/await: Simplifies asynchronous code with synchronous-like syntax.
+
+19. **Discuss the significance of the event loop in JavaScript.**
+   - The event loop handles asynchronous operations by continuously checking the message queue and executing tasks when the call stack is empty.
+
+20. **Explain some new features introduced in ES6 (ECMAScript 2015) and their benefits.**
+   - `let` and `const` for better scoping.
+   - Arrow functions for concise syntax.
+   - Template literals for string interpolation.
+   - Destructuring assignment.
+   - Default parameters.
+   - Spread/rest operators.
+   - Promises for better asynchronous handling.
+   - Modules (import/export) for better code organization.
+
+21. **Discuss the purpose and usage of template literals in JavaScript.**
+   - Template literals, introduced in ES6, allow for easier string manipulation using backticks (`` ` ``) instead of quotes. They enable multi-line strings, string interpolation using `${expression}`, and embedded expressions.
+   - Example:
+     ```js
+     const name = "John";
+     console.log(`Hello, ${name}!`); // Output: Hello, John!
+     ```
+
+22. **What are destructuring assignments, and how are they used in JavaScript?**
+   - Destructuring allows extracting values from arrays or objects into distinct variables.
+   - Example:
+     ```js
+     const [a, b] = [1, 2];
+     const {name, age} = {name: "Alice", age: 25};
+     ```
+
+23. **How do you handle errors and exceptions in JavaScript?**
+   - Use `try...catch` blocks to catch runtime errors.
+   - Use `throw` to manually trigger exceptions.
+   - Example:
+     ```js
+     try {
+       JSON.parse("invalid json");
+     } catch (error) {
+       console.error("Parsing error", error);
+     }
+     ```
+
+24. **Explain the significance of try...catch blocks in error handling.**
+   - They help prevent application crashes by catching exceptions and providing alternative flows.
+   - Useful for handling synchronous code and JSON parsing.
+
+25. **What tools or techniques do you use for debugging JavaScript code?**
+   - Browser DevTools (Chrome, Firefox)
+   - `console.log()` for logging values
+   - Breakpoints and watch expressions
+   - Linters like ESLint
+
+26. **Discuss some best practices for writing clean and maintainable JavaScript code.**
+   - Follow naming conventions
+   - Use meaningful variable names
+   - Modularize code using functions and modules
+   - Avoid global variables
+   - Write DRY (Don't Repeat Yourself) code
+
+27. **How can you optimize JavaScript code for better performance?**
+   - Minify and bundle JS files
+   - Debounce and throttle events
+   - Avoid unnecessary DOM manipulations
+   - Use efficient algorithms and data structures
+
+28. **Have you worked with any JavaScript frameworks or libraries (e.g., React, Angular, Vue)?**
+   - Yes, primarily with React. React's component-based structure allows for reusable UI elements, and its virtual DOM enhances performance.
+
+29. **Discuss the concepts of currying and memoization in JavaScript.**
+   - **Currying:** Transforming a function with multiple arguments into a sequence of functions each taking a single argument.
+     ```js
+     const add = a => b => a + b;
+     console.log(add(2)(3)); // 5
+     ```
+   - **Memoization:** Caching function results to improve performance.
+
+30. **Explain the concept of Promises chaining and error handling within promise chains.**
+   - Promises chaining allows sequential execution of asynchronous operations.
+   - Example:
+     ```js
+     fetch('url')
+       .then(response => response.json())
+       .then(data => console.log(data))
+       .catch(error => console.error(error));
+     ```
+
+31. **What is the Event Loop in JavaScript? How does it contribute to the asynchronous nature of JavaScript?**
+   - The event loop manages execution of asynchronous operations by handling tasks in the callback queue after completing the call stack.
+
+32. **What is the purpose of the 'use strict' statement in JavaScript?**
+   - Enforces a stricter parsing and error handling in JS code to prevent common mistakes (e.g., undeclared variables).
+   - Example:
+     ```js
+     "use strict";
+     x = 10; // Throws an error
+     ```
+
+33. **Discuss the differences between the apply, call, and bind methods in JavaScript.**
+   - `call`: Invokes a function with arguments passed individually.
+   - `apply`: Similar to `call`, but takes arguments as an array.
+   - `bind`: Returns a new function with `this` bound to a specific value.
+   - Example:
+     ```js
+     function greet(name) { console.log(this.msg + ' ' + name); }
+     greet.call({msg: 'Hello'}, 'John');
+     ```
+
+34. **Explain the concept of currying and provide an example of its use in JavaScript.**
+   - Currying is breaking down a function with multiple arguments into smaller functions.
+   - Example:
+     ```js
+     const multiply = x => y => x * y;
+     const double = multiply(2);
+     console.log(double(5)); // 10
+     ```
+
+35. **What is a closure in JavaScript, and how does it impact variable scope?**
+   - A closure is a function that retains access to its outer scope.
+   - Example:
+     ```js
+     function outer() {
+       let count = 0;
+       return function inner() { count++; console.log(count); };
+     }
+     const counter = outer();
+     counter(); // 1
+     ```
+
+36. **Explain the difference between arrays and linked lists. When would you use one over the other?**
+   - Arrays allow indexed access, while linked lists consist of nodes connected via references.
+   - Arrays are better for fast lookup; linked lists are preferred for dynamic data insertion/deletion.
+
+37. **What are some sorting algorithms used in JavaScript? Provide examples and their time complexity.**
+   - Common sorting algorithms include:
+     - Bubble Sort: `O(n^2)`
+     - Merge Sort: `O(n log n)`
+     - Quick Sort: `O(n log n)`
+     ```js
+     arr.sort((a, b) => a - b); // Quick sort
+     ```
+
+38. **Discuss the concepts of stacks and queues and how they are implemented in JavaScript.**
+   - **Stack:** LIFO (Last-In-First-Out)
+     ```js
+     const stack = [];
+     stack.push(1);
+     stack.pop();
+     ```
+   - **Queue:** FIFO (First-In-First-Out)
+     ```js
+     const queue = [];
+     queue.push(1);
+     queue.shift();
+     ```
+
+39. **Explain the concept of recursion and provide an example of a recursive function in JavaScript.**
+   
+   Recursion is a programming technique where a function calls itself to solve smaller instances of the same problem until a base condition is met.
+   
+   Example:
+   ```javascript
+   function factorial(n) {
+       if (n === 0) return 1;  // Base case
+       return n * factorial(n - 1); // Recursive call
+   }
+   console.log(factorial(5)); // Output: 120
+   ```
+
+40. **What are the key differences between React, Vue, and Angular? When would you choose one over the others?**
+
+   - **React:** Component-based, virtual DOM, unidirectional data flow, high flexibility, used for large-scale applications.
+   - **Vue:** Lightweight, simple API, two-way data binding, great for small to medium projects.
+   - **Angular:** Full-fledged framework, two-way data binding, dependency injection, best for enterprise-level applications.
+   
+   Choose React for flexibility, Vue for simplicity, and Angular for complex applications.
+
+41. **Explain the Virtual DOM and its significance in libraries like React.**
+
+   The Virtual DOM is a lightweight representation of the actual DOM. It allows React to update only the parts of the UI that change, improving performance by minimizing direct DOM manipulation.
+
+42. **How does state management work in React? Discuss different approaches, such as using Context API or Redux.**
+
+   - **Context API:** Built-in, used for small to medium applications to avoid prop drilling.
+   - **Redux:** Centralized state management, used for large applications requiring predictable state changes.
+
+43. **Discuss the concept of components in frontend frameworks and libraries, their importance, and best practices for creating them.**
+
+   Components are reusable UI elements that encapsulate structure, behavior, and styling. Best practices include keeping components small, reusable, and avoiding deep nesting.
+
+44. **Discuss modern JavaScript APIs like fetch, localStorage, and the use cases for each.**
+
+   - **fetch:** Handles HTTP requests asynchronously.
+   - **localStorage:** Stores key-value pairs in the browser persistently.
+
+45. **How do you implement client-side routing in a single-page application using JavaScript?**
+
+   Use libraries like React Router to map URL paths to components and enable navigation without full page reloads.
+
+46. **Explain the differences between callbacks and Promises. When would you prefer one over the other?**
+
+   - Callbacks handle asynchronous tasks by passing a function to another function.
+   - Promises provide better readability and error handling.
+   - Prefer Promises for cleaner code and better error management.
+
+47. **How do you handle errors in Promises? Discuss the best practices for error handling in Promises.**
+
+   Use `.catch()` to handle errors gracefully and `try...catch` when using `async/await` syntax.
+
+48. **What are Async/Await in JavaScript? How do they simplify asynchronous code?**
+
+   Async/Await provides a synchronous style syntax for writing asynchronous code, making it more readable and easier to handle errors.
+
+49. **Discuss the advantages of using TypeScript over JavaScript.**
+
+   - Static typing.
+   - Improved code maintainability.
+   - Better tooling and autocompletion support.
+
+50. **Explain the concepts of map, reduce, and filter in JavaScript.**
+
+   - **map:** Transforms elements and returns a new array.
+   - **reduce:** Aggregates values into a single result.
+   - **filter:** Filters elements based on conditions.
+
+51. **What are some performance optimization techniques for JavaScript applications?**
+
+   - Minify code.
+   - Use lazy loading.
+   - Optimize loops.
+   - Reduce DOM manipulation.
+
+52. **How do you use the Geolocation API in JavaScript? Provide an example.**
+
+   ```javascript
+   navigator.geolocation.getCurrentPosition(position => {
+       console.log(position.coords.latitude, position.coords.longitude);
+   });
+   ```
+
+53. **Discuss the localStorage and sessionStorage APIs and their differences.**
+
+   - **localStorage:** Persistent storage until manually cleared.
+   - **sessionStorage:** Data persists until the session ends.
+
+54. **Explain the spread operator and its applications in JavaScript.**
+
+   The spread operator (`...`) expands elements of an array or object.
+   
+   Example:
+   ```javascript
+   const arr1 = [1, 2];
+   const arr2 = [...arr1, 3, 4];
+   ```
+
+55. **Discuss the purpose and use cases for generators and iterators in JavaScript.**
+
+   Generators produce values lazily using the `yield` keyword, useful for handling large datasets efficiently.
+
+56. **How does JavaScript interact with GraphQL APIs? Discuss libraries or methods used for making GraphQL requests from the client-side.**
+
+   JavaScript interacts with GraphQL APIs using libraries like Apollo Client or fetch to send queries and mutations to a GraphQL server.
+
+57. **What are WebSockets, and how are they used in real-time applications with JavaScript?**
+   - WebSockets provide a persistent, full-duplex communication channel between the client and server. They are commonly used in real-time applications such as chat apps, online gaming, and live notifications.
+   - Example:
+     ```js
+     const socket = new WebSocket('ws://example.com/socket');
+     socket.onopen = () => socket.send('Hello Server');
+     socket.onmessage = (event) => console.log('Message:', event.data);
+     ```
+
+58. **How can you handle internationalization and localization in JavaScript applications?**
+   - Using libraries like `i18next` or `react-intl`.
+   - Storing translations in JSON files and dynamically loading them based on the user's locale.
+   - Example with `i18next`:
+     ```js
+     i18next.init({ resources: { en: { translation: { key: "Hello" } } } });
+     console.log(i18next.t('key'));
+     ```
+
+59. **Explain the concept of stack trace and its significance in debugging JavaScript code.**
+   - A stack trace shows the sequence of function calls leading to an error.
+   - It helps developers pinpoint the source of an issue by tracking the call hierarchy.
+
+60. **Discuss strategies to handle and troubleshoot memory leaks in JavaScript.**
+   - Use browser dev tools to monitor memory usage.
+   - Avoid global variables and event listeners that are not properly removed.
+   - Use WeakMap and WeakSet for objects that can be garbage collected.
+
+61. **Discuss the importance of code organization and best practices for structuring JavaScript projects.**
+   - Use modular design with clear separation of concerns (e.g., MVC pattern).
+   - Follow consistent naming conventions and documentation.
+   - Use tools like ESLint to enforce coding standards.
+
+62. **How do you manage dependencies and handle version control in JavaScript projects?**
+   - Use `package.json` with npm or yarn.
+   - Lock dependencies using `package-lock.json` or `yarn.lock`.
+   - Use version control systems like Git for tracking changes.
+
+63. **What are template literals in ES6? How do they differ from regular strings in JavaScript?**
+   - Template literals allow multi-line strings and interpolation using backticks (`` ` ``).
+   - Example:
+     ```js
+     let name = 'John';
+     console.log(`Hello, ${name}`);
+     ```
+
+64. **Discuss the purpose and use of the destructuring assignment in JavaScript.**
+   - It allows extracting values from objects/arrays into variables.
+   - Example:
+     ```js
+     const { name, age } = { name: 'Alice', age: 25 };
+     ```
+
+65. **Explain the concept of default parameters in ES6 functions and their importance.**
+   - Default values prevent `undefined` when no arguments are provided.
+   - Example:
+     ```js
+     function greet(name = 'Guest') {
+       console.log(`Hello, ${name}`);
+     }
+     ```
+
+66. **What are some popular JavaScript build tools and bundlers? How do they streamline the development process?**
+   - Webpack, Parcel, Rollup – they bundle modules, optimize assets, and support hot module replacement.
+
+67. **Explain the role of Babel in modern JavaScript development.**
+   - Babel transpiles modern ES6+ code into compatible versions for older browsers.
+   - Example in `.babelrc`:
+     ```json
+     { "presets": ["@babel/preset-env"] }
+     ```
+
+68. **How can you optimize the performance of a website by minimizing render-blocking resources?**
+   - Load scripts asynchronously with `async`/`defer` attributes.
+   - Use Content Delivery Networks (CDNs).
+   - Optimize CSS and JavaScript file sizes.
+
+69. **Discuss techniques for lazy loading images in JavaScript for enhanced performance.**
+   - Use the `loading="lazy"` attribute.
+   - Implement Intersection Observer API to load images on viewport entry.
+
+70. **What are the core features of a Progressive Web App, and how does JavaScript play a role in building PWAs?**
+   - Features: offline capabilities, push notifications, responsive design.
+   - JavaScript is used to create service workers and manage caching.
+
+71. **How can you implement service workers in a JavaScript-based web application?**
+   - Example:
+     ```js
+     navigator.serviceWorker.register('/sw.js').then(() => console.log('Registered'));
+     ```
+
+72. **What testing frameworks have you used in JavaScript? Discuss the differences between Jest, Mocha, and Jasmine.**
+   - Jest: easy setup, built-in mocking.
+   - Mocha: flexible with third-party plugins.
+   - Jasmine: behavior-driven development (BDD).
+
+73. **Explain the purpose of mocking and stubbing in testing JavaScript applications.**
+   - Mocking: simulating functions/modules.
+   - Stubbing: pre-defining function behavior for tests.
+
+74. **Discuss the purpose of React hooks and their advantages over class-based components.**
+   - Hooks (e.g., `useState`, `useEffect`) simplify state management without classes.
+   - Improved readability and reusability.
+
+
+**75. How does state management work in React applications? Compare various state management libraries like Redux, MobX, and Context API.**  
+State management in React allows components to manage and share state efficiently.  
+- **Redux:** Centralized store, predictable state management, actions/reducers, suitable for large applications.  
+- **MobX:** Reactive, flexible, easier to implement than Redux, mutable state management.  
+- **Context API:** Built-in, lightweight, useful for passing data deeply in component trees but not ideal for complex states.  
+
+---
+
+**76. What is Node.js, and how does it differ from client-side JavaScript?**  
+Node.js is a runtime environment that allows executing JavaScript outside the browser, built on the V8 engine. Unlike client-side JS, Node.js focuses on server-side operations like file handling, database interactions, and networking.  
+
+---
+
+**77. Discuss the event-driven architecture in Node.js and its significance in building scalable applications.**  
+Node.js uses an event-driven, non-blocking architecture where I/O operations are handled asynchronously through event loops and callbacks, making it efficient and scalable for real-time applications.  
+
+---
+
+**78. Explain the differences between synchronous and asynchronous error handling in JavaScript.**  
+- **Synchronous:** Errors are thrown and caught immediately within the same execution flow using `try...catch`.  
+- **Asynchronous:** Errors occur later in async operations and are handled using `.catch()` with Promises or `try...catch` within `async/await` functions.  
+
+---
+
+**79. How do you handle unhandled promise rejections in JavaScript?**  
+By using `.catch()` at the end of promise chains or global event handlers like `process.on('unhandledRejection', handler)` in Node.js.  
+
+---
+
+**80. Explain the difference between concurrency and parallelism in JavaScript.**  
+- **Concurrency:** Multiple tasks can start but may not run at the same time (e.g., event loop in JS).  
+- **Parallelism:** Multiple tasks run simultaneously (e.g., using worker threads in Node.js).  
+
+---
+
+**81. What are some methods to create smooth animations in JavaScript applications?**  
+- Using **CSS animations** for simple tasks.  
+- **requestAnimationFrame()** for high-performance JS animations.  
+- Libraries like **GSAP** and **Anime.js** for complex animations.  
+
+---
+
+**82. How do you handle user interactions and gestures in JavaScript for touch-enabled devices?**  
+Using touch events like `touchstart`, `touchmove`, and `touchend` or libraries such as Hammer.js for gesture recognition.  
+
+---
+
+**83. Discuss various debugging tools available for JavaScript and their key features.**  
+- **Chrome DevTools:** Breakpoints, network monitoring, profiling.  
+- **Node.js Debugger:** Built-in debugging via CLI.  
+- **VS Code Debugger:** Integrated with modern JS frameworks.  
+
+---
+
+**84. How do you profile JavaScript applications for performance optimization?**  
+Using Chrome DevTools' **Performance tab**, monitoring event loops, memory leaks, and optimizing critical render paths.  
+
+---
+
+**85. Explain the differences between capturing and bubbling phases of event propagation in JavaScript.**  
+- **Capturing phase:** Events propagate from the root to the target element.  
+- **Bubbling phase:** Events propagate from the target element back to the root.  
+
+---
+
+**86. How can you prevent event propagation in JavaScript? Provide examples.**  
+By using `event.stopPropagation()` to prevent bubbling and `event.stopImmediatePropagation()` to stop further propagation in capturing or bubbling.  
+
+```js
+element.addEventListener('click', (event) => {
+  event.stopPropagation();
+});
+```
+
+---
+
+**87. What tools or platforms do you use for error tracking and monitoring in JavaScript applications?**  
+- **Sentry:** Error tracking and performance monitoring.  
+- **LogRocket:** Session replays and issue tracking.  
+- **New Relic:** Full-stack monitoring.  
+
+---
+
+**88. How can you integrate and utilize geospatial and map APIs, like Google Maps or Mapbox, in JavaScript applications?**  
+Using their JavaScript SDKs to embed maps, geocode locations, and add custom layers via API keys and initialization functions.  
+
+---
+
+**89. What is WebAssembly, and how does it interact with JavaScript in web applications?**  
+WebAssembly (Wasm) is a binary instruction format that allows high-performance execution of code written in languages like C/C++. It interacts with JS via the WebAssembly API to run heavy computations efficiently.  
+
+---
+
+**90. Explain the process of deploying JavaScript applications. How can CI/CD pipelines be set up for JavaScript projects?**  
+Deployment involves:  
+1. Building (e.g., using Webpack, Babel).  
+2. Hosting (e.g., Vercel, Netlify, AWS).  
+3. CI/CD using GitHub Actions, Jenkins, or GitLab CI for automated testing, linting, and deployment.  
+
+---
+
+**91. Explain the Module pattern in JavaScript and its advantages.**  
+The Module pattern encapsulates functionality using closures to create private and public members, providing better code organization and avoiding global scope pollution.  
+
+Example:  
+```js
+const modulePattern = (function() {
+  let privateVar = 'secret';
+  return {
+    getVar: () => privateVar,
+  };
+})();
+console.log(modulePattern.getVar()); // 'secret'
+```
+
+Advantages:  
+- Encapsulation of data.  
+- Avoids polluting the global namespace.  
+- Promotes reusability and maintainability.  
+
+
+**92. How can you integrate and interact with the Canvas API in JavaScript? Provide an example of drawing on the HTML5 canvas.**  
+The Canvas API allows drawing graphics via JavaScript. You can use methods like `fillRect()`, `stroke()`, and `drawImage()` on the canvas.  
+
+Example:  
+```js
+const canvas = document.getElementById('myCanvas');
+const ctx = canvas.getContext('2d');
+ctx.fillStyle = 'blue';
+ctx.fillRect(50, 50, 100, 100);
+```
+
+---
+
+**93. Discuss the Geolocation API and how it's utilized in JavaScript applications.**  
+The Geolocation API provides access to a user's location through `navigator.geolocation`.  
+
+Example:  
+```js
+navigator.geolocation.getCurrentPosition(position => {
+  console.log(position.coords.latitude, position.coords.longitude);
+});
+```
+
+---
+
+**94. Explain the WebSocket protocol and how it's used for real-time communication in JavaScript applications.**  
+WebSockets provide full-duplex communication between the client and server over a single persistent connection, used for chat apps, live updates, etc.  
+
+Example:  
+```js
+const socket = new WebSocket('ws://example.com/socket');
+socket.onmessage = event => console.log(event.data);
+socket.send('Hello Server');
+```
+
+---
+
+**95. How do you handle WebSocket connections in JavaScript? Provide examples.**  
+You manage WebSocket connections using `onopen`, `onmessage`, `onclose`, and `onerror` events.  
+
+Example:  
+```js
+const socket = new WebSocket('ws://example.com');
+socket.onopen = () => socket.send('Connected');
+socket.onmessage = event => console.log('Message:', event.data);
+socket.onclose = () => console.log('Disconnected');
+```
+
+---
+
+**96. Discuss code-splitting and lazy loading in JavaScript for optimizing web performance.**  
+Code-splitting divides code into smaller chunks, and lazy loading loads resources only when needed. Tools like Webpack and React's `React.lazy()` help achieve this.  
+
+Example:  
+```js
+const LazyComponent = React.lazy(() => import('./MyComponent'));
+```
+
+---
+
+**97. How can you minimize render-blocking resources in a web application to improve loading times?**  
+- Defer JavaScript (`<script defer>`)  
+- Minify CSS/JS  
+- Use asynchronous loading (`async`)  
+- Optimize critical rendering path  
+
+---
+
+**98. Explain the concept of micro-frontends and their implementation using JavaScript frameworks/libraries.**  
+Micro-frontends break a UI into independent, smaller apps owned by different teams. They can be implemented using frameworks like React or Angular within Web Components.  
+
+---
+
+**99. Discuss the advantages and challenges of micro-frontends in JavaScript-based applications.**  
+**Advantages:** Scalable, independent deployment, team autonomy.  
+**Challenges:** Increased complexity, dependency management.  
+
+---
+
+**100. How does npm differ from yarn in managing JavaScript dependencies?**  
+- **npm:** Default package manager, slower, uses `package-lock.json`.  
+- **yarn:** Faster, parallel installations, uses `yarn.lock`.  
+
+---
+
+**101. Discuss the use of UI frameworks or component libraries like Material-UI, Ant Design, or Bootstrap in JavaScript applications.**  
+These libraries provide pre-designed components for consistent UI and faster development. Material-UI is React-based, Ant Design is for enterprise-level UI, and Bootstrap is framework-agnostic.  
+
+---
+
+**102. What are the basic data types in JavaScript?**  
+`String`, `Number`, `Boolean`, `Object`, `Array`, `Null`, `Undefined`, `Symbol`, `BigInt`.  
+
+---
+
+**103. Explain the difference between null and undefined.**  
+- **null:** Explicitly assigned absence of value.  
+- **undefined:** Variable declared but not assigned a value.  
+
+---
+
+**104. Discuss variable scope and hoisting in JavaScript.**  
+- **Scope:** Determines variable accessibility (global, function, block).  
+- **Hoisting:** Variables and functions are moved to the top of their scope during execution.  
+
+---
+
+**105. What is the purpose of the 'use strict' directive in JavaScript?**  
+It enforces a stricter parsing mode, preventing silent errors and disallowing certain practices.  
+
+---
+
+**106. Explain the difference between function declarations and function expressions.**  
+- **Declaration:** `function foo() {}` (hoisted).  
+- **Expression:** `const foo = function() {};` (not hoisted).  
+
+---
+
+**107. What is a closure in JavaScript, and how is it useful?**  
+A closure allows functions to retain access to the scope in which they were created.  
+
+Example:  
+```js
+function outer() {
+  let count = 0;
+  return function inner() {
+    count++;
+    console.log(count);
+  };
+}
+const counter = outer();
+counter();
+```
+
+---
+
+**108. How do you handle asynchronous operations in JavaScript?**  
+Using callbacks, Promises, and async/await.  
+
+---
+
+**109. Discuss some new features introduced in ES6 (ECMAScript 2015).**  
+Arrow functions, let/const, template literals, classes, default parameters, destructuring, modules.  
+
+---
+
+**110. What are arrow functions, and how do they differ from regular functions?**  
+Arrow functions have shorter syntax and lexically bind `this`.  
+
+---
+
+**111. How do you access and manipulate the DOM in JavaScript?**  
+Using methods like `getElementById`, `querySelector`, `innerHTML`, and `appendChild`.  
+
+---
+
+**112. Explain event delegation and how it's used in event handling.**  
+Attaching a single event listener to a parent element to manage multiple child events.  
+
+---
+
+**113. How do you handle errors and exceptions in JavaScript?**  
+Using `try...catch`, `throw` statements, and `.catch()` for Promises.  
+
+---
+
+**114. Discuss common debugging techniques in JavaScript.**  
+Using `console.log()`, breakpoints, DevTools, and `debugger` statements.  
+
+---
+
+**115. How do you loop through an array in JavaScript?**  
+Using `forEach()`, `map()`, `for...of`, and traditional for-loops.  
+
+---
+
+**116. Explain the concept of object-oriented programming in JavaScript.**  
+OOP in JS is based on prototypes and ES6 classes for encapsulation and reusability.  
+
+---
+
+**117. How can you clone an object in JavaScript?**  
+Using `Object.assign({}, obj)` or spread operator `{ ...obj }`.  
+
+---
+
+**118. Explain the purpose of Promises in JavaScript and how they handle asynchronous operations.**  
+Promises represent asynchronous operations that can resolve or reject.  
+
+---
+
+**119. Discuss the async/await feature and its benefits in handling asynchronous code.**  
+Simplifies handling of Promises, making code look synchronous and readable.  
+
+---
+
+**120. Explain variable scope in JavaScript and how it affects closures.**  
+Closures capture variables from the outer scope in which they are defined.  
+
+---
+
+**121. What is the difference between global scope and local scope in JavaScript?**  
+Global variables are accessible everywhere, local variables exist within a function/block.  
+
+---
+
+**122. Discuss the capturing and bubbling phases of event propagation in JavaScript.**  
+Events first go down (capturing) and then up (bubbling) the DOM tree.  

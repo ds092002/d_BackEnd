@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/d_BackEnd/NodeJS",
-      "program": "d:/d_BackEnd/NodeJS/build/Debug/outDebug",
+      "cwd": "d:/d_BackEnd/d_Mongodb",
+      "program": "d:/d_BackEnd/d_Mongodb/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
